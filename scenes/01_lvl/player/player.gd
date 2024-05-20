@@ -1,31 +1,47 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+## Velocidad del personaje
+@export var speed: float = 200.0
+## Velocidad de salto
+@export var jumpVelocity = -400.0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
-var stateMachine
+
+var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")	# Gravedad
+var stateMachine																# Maquina de estados	
+
 func _ready() -> void:
+	# Cargamos maquina de estado
 	stateMachine = $AnimationTree.get("parameters/playback")
+	# Reproducimos animación por defecto
 	stateMachine.travel("idle")
 
-
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Agregamos gravedad
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Handle jump.
+	# Administramos salto
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = jumpVelocity
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	# actualizamos animaciones
+	if velocity.y > 0:
+		stateMachine.travel("fall")
+	elif velocity.y < 0:
+		stateMachine.travel("jump")
+	
+	# Obtenemos entradas de jugador:
+	var direction := Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left") 
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
+		# Rotamos sprites
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+		if is_on_floor():
+			stateMachine.travel("run")
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
+		if is_on_floor():
+			stateMachine.travel("idle")
 
+	# Movemos el personaje
 	move_and_slide()

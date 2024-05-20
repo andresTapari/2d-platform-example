@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cvoevbrefd86m"]
+[gd_scene load_steps=57 format=3 uid="uid://cvoevbrefd86m"]
 
 [ext_resource type="Texture2D" uid="uid://cldnkthsqd6mu" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="1_5761o"]
 [ext_resource type="Script" path="res://scenes/01_lvl/player/player.gd" id="1_nxepa"]
@@ -319,44 +319,35 @@ animation = &"run"
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_skyvq"]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_woa37"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lqkob"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rik5t"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xc46k"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2hueu"]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o5kuf"]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sgkxo"]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_45js0"]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_psghm"]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_75bdi"]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0npul"]
-switch_mode = 2
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ocjf8"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tsfsu"]
-states/End/position = Vector2(1111, 95)
+states/End/position = Vector2(824, 99)
 states/Start/position = Vector2(191, 100)
 states/fall/node = SubResource("AnimationNodeAnimation_agcap")
 states/fall/position = Vector2(381, -118)
 states/ground/node = SubResource("AnimationNodeAnimation_a6uvg")
-states/ground/position = Vector2(381, -26)
+states/ground/position = Vector2(381, -10)
 states/idle/node = SubResource("AnimationNodeAnimation_elne1")
 states/idle/position = Vector2(381, 99)
 states/jump/node = SubResource("AnimationNodeAnimation_5xcw1")
 states/jump/position = Vector2(577.868, -118)
 states/run/node = SubResource("AnimationNodeAnimation_std7f")
-states/run/position = Vector2(577.868, 95)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_vojif"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_skyvq"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_woa37"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_o5kuf"), "ground", "run", SubResource("AnimationNodeStateMachineTransition_sgkxo"), "ground", "idle", SubResource("AnimationNodeStateMachineTransition_45js0"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_psghm"), "fall", "ground", SubResource("AnimationNodeStateMachineTransition_75bdi"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_0npul")]
-graph_offset = Vector2(-0.952599, -94)
+states/run/position = Vector2(577.868, 99)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_vojif"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_skyvq"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_woa37"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_lqkob"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_rik5t"), "fall", "ground", SubResource("AnimationNodeStateMachineTransition_xc46k"), "ground", "idle", SubResource("AnimationNodeStateMachineTransition_2hueu"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_ocjf8")]
+graph_offset = Vector2(-21.9526, -173)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xno7y"]
 animations = [{
@@ -446,7 +437,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_kr2th")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -501,9 +492,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_mbsjp")
-}
 tree_root = SubResource("AnimationNodeStateMachine_tsfsu")
 anim_player = NodePath("../AnimationPlayer")
 
