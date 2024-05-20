@@ -343,7 +343,7 @@ switch_mode = 2
 switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tsfsu"]
-states/End/position = Vector2(906, 87)
+states/End/position = Vector2(1111, 95)
 states/Start/position = Vector2(191, 100)
 states/fall/node = SubResource("AnimationNodeAnimation_agcap")
 states/fall/position = Vector2(381, -118)
@@ -356,7 +356,7 @@ states/jump/position = Vector2(577.868, -118)
 states/run/node = SubResource("AnimationNodeAnimation_std7f")
 states/run/position = Vector2(577.868, 95)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_vojif"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_skyvq"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_woa37"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_o5kuf"), "ground", "run", SubResource("AnimationNodeStateMachineTransition_sgkxo"), "ground", "idle", SubResource("AnimationNodeStateMachineTransition_45js0"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_psghm"), "fall", "ground", SubResource("AnimationNodeStateMachineTransition_75bdi"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_0npul")]
-graph_offset = Vector2(-25.9526, -135)
+graph_offset = Vector2(-0.952599, -94)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xno7y"]
 animations = [{
@@ -441,10 +441,10 @@ animations = [{
 "texture": ExtResource("3_l8a5x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_kr2th")
+"texture": ExtResource("4_ylyjj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ylyjj")
+"texture": ExtResource("5_kr2th")
 }],
 "loop": true,
 "name": &"idle",
