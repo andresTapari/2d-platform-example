@@ -1,7 +1,7 @@
 [gd_scene load_steps=57 format=3 uid="uid://cvoevbrefd86m"]
 
 [ext_resource type="Texture2D" uid="uid://cldnkthsqd6mu" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="1_5761o"]
-[ext_resource type="Script" path="res://scenes/01_lvl/player/player.gd" id="1_nxepa"]
+[ext_resource type="Script" path="res://scenes/02_player/player/player.gd" id="1_nxepa"]
 [ext_resource type="Texture2D" uid="uid://b3txbkncgxggl" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png" id="2_0srmb"]
 [ext_resource type="Texture2D" uid="uid://c2x641t5pk4gc" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png" id="2_4ref1"]
 [ext_resource type="Texture2D" uid="uid://dbxtb2a7baab2" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/08-Dead Ground/Dead Ground 01.png" id="2_4v6b4"]
@@ -492,6 +492,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mbsjp")
+}
 tree_root = SubResource("AnimationNodeStateMachine_tsfsu")
 anim_player = NodePath("../AnimationPlayer")
 
