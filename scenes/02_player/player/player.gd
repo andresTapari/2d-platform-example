@@ -53,7 +53,7 @@ func handle_movement() -> void:
 	if direction:
 		velocity.x = direction * speed
 		# Rotamos sprites
-		$AnimatedSprite2D.flip_h = velocity.x < 0
+		$AnimatedSprite2D.scale.x = 1 if velocity.x > 0 else -1
 		if is_on_floor():
 			stateMachine.travel("run")
 	else:
@@ -86,6 +86,3 @@ func handle_attack() -> void:
 
 func attack() -> void:
 	attackEn = false
-
-func _on_animation_tree_animation_finished(anim_name):
-	pass # Replace with function body.
