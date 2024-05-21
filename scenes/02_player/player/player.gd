@@ -21,16 +21,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# Agregamos gravedad
 	apply_gravity(delta)
-
 	# Administramos salto
 	handle_jump()
-	
 	# Administramos movimientos
 	handle_movement()
-	
 	# Administramos ataque
 	handle_attack()
-
 	# Movemos el personaje
 	move_and_slide()
 
@@ -39,6 +35,8 @@ func apply_gravity(delta) -> void:
 		velocity.y += gravity * delta
 
 func handle_jump() -> void:
+	if attackEn:
+		return
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jumpVelocity
 	# actualizamos animaciones
@@ -66,11 +64,8 @@ func handle_movement() -> void:
 func handle_attack() -> void:
 	if Input.is_action_just_pressed("ui_attack"):
 		attackEn = true
-		%ComboTimer.start()
-		if not %ComboTimer.is_stopped():
-			groundCombo += 1
 		if is_on_floor():
-			#groundAttackCounter += 1
+			groundCombo += 1
 			match groundCombo:
 				1:
 					stateMachine.travel("attack_1")
@@ -78,22 +73,19 @@ func handle_attack() -> void:
 					stateMachine.travel("attack_2")
 				3:
 					stateMachine.travel("attack_3")
-		#else:
-			#airAttackCounter += 1
-			#match airAttackCounter:
-				#1:
-					#stateMachine.travel("air_attack_1")
-				#2:
-					#stateMachine.travel("air_attack_2")
-	#
-			#velocity.y = jumpVelocity/2
+					groundCombo = 0
+		else:
+			airCombo += 1
+			velocity.y = jumpVelocity/2
+			match airCombo:
+				1:
+					stateMachine.travel("air_attack_1")
+				2:
+					stateMachine.travel("air_attack_2")
+					airCombo = 0
 
 func attack() -> void:
-
-	print("Attack")
 	attackEn = false
-	pass
-
 
 func _on_animation_tree_animation_finished(anim_name):
 	pass # Replace with function body.
