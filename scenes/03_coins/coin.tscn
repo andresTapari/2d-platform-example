@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgcjbj7atyq6n"]
+
+[ext_resource type="Script" path="res://scenes/03_coins/coin.gd" id="1_lleis"]
+[ext_resource type="Texture2D" uid="uid://c3fb4t4m4r317" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="2_dd47l"]
+[ext_resource type="Texture2D" uid="uid://dicuqd8hfl1jf" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/02.png" id="3_mbkuh"]
+[ext_resource type="Texture2D" uid="uid://cqtltfchgk1jd" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/03.png" id="4_ixeav"]
+[ext_resource type="Texture2D" uid="uid://kxndwdp6q61t" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/04.png" id="5_81iur"]
+[ext_resource type="Texture2D" uid="uid://ca46k40n4wsvc" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Coin Effect/01.png" id="6_n6kgd"]
+[ext_resource type="Texture2D" uid="uid://cqyodteixncc0" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Coin Effect/02.png" id="7_w62nh"]
+[ext_resource type="Texture2D" uid="uid://bj5pwc5l51807" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Coin Effect/03.png" id="8_gh7hp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b5qgi"]
+radius = 5.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7j7fx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dd47l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mbkuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ixeav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_81iur")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_n6kgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w62nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gh7hp")
+}],
+"loop": false,
+"name": &"picked",
+"speed": 5.0
+}]
+
+[node name="coin" type="Area2D"]
+script = ExtResource("1_lleis")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b5qgi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7j7fx")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0205815
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
