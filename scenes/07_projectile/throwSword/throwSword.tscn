@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://ntf44em3g7mo"]
+
+[ext_resource type="Script" path="res://scenes/07_projectile/throwSword/throwSword.gd" id="1_im7dl"]
+[ext_resource type="Texture2D" uid="uid://dormcyxwfliwp" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/22-Sword Spinning/Sword Spinning 01.png" id="1_q52p7"]
+[ext_resource type="Texture2D" uid="uid://lwqi8ggga0h6" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/22-Sword Spinning/Sword Spinning 02.png" id="2_ju122"]
+[ext_resource type="Texture2D" uid="uid://pnhi1gqasayf" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/22-Sword Spinning/Sword Spinning 03.png" id="3_af0gd"]
+[ext_resource type="Texture2D" uid="uid://deh625gdjdror" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/22-Sword Spinning/Sword Spinning 04.png" id="4_dt7dc"]
+[ext_resource type="Texture2D" uid="uid://cauj1gke7tvpd" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/23-Sword Embedded/Sword Embedded 01.png" id="5_ley85"]
+[ext_resource type="Texture2D" uid="uid://bmoe8b0ojbvgo" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/23-Sword Embedded/Sword Embedded 02.png" id="6_8vsmx"]
+[ext_resource type="Texture2D" uid="uid://jcpwgeqtc04g" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/23-Sword Embedded/Sword Embedded 03.png" id="7_4eiuk"]
+[ext_resource type="Texture2D" uid="uid://bldnl7myqkhla" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword/23-Sword Embedded/Sword Embedded 04.png" id="8_t8lqd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_guwaq"]
+radius = 7.07107
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nd3hy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q52p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ju122")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_af0gd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dt7dc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ley85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8vsmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4eiuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t8lqd")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 10.0
+}]
+
+[node name="ThrowSword" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_im7dl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_guwaq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_nd3hy")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

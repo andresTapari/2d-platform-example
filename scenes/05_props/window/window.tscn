@@ -310,7 +310,7 @@ animations = [{
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_h4jvv")
 autoplay = "default"
-frame_progress = 0.44077
+frame_progress = 0.262627
 
 [node name="01" type="Sprite2D" parent="."]
 z_index = 1

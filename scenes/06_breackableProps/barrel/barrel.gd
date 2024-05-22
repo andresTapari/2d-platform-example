@@ -15,11 +15,11 @@ func hit(incomeDamage: int, incomeDamagePosition: Vector2 = Vector2.ZERO) -> voi
 		for parts in %Parts.get_children():
 			var dir : Vector2 = (global_position - incomeDamagePosition).normalized()
 			var impulse: Vector2 = Vector2(dir.x , -1) * jumpForce
-			parts.freeze = false
+			parts.set_deferred("freeze",false)
 			parts.visible = true
-			parts.apply_impulse(impulse)
 			parts.get_node("Timer").start()
-			parts.reparent(get_tree().current_scene)
+			parts.call_deferred("reparent",get_tree().current_scene)
+			parts.call_deferred("apply_impulse",impulse)
 		%AnimatedSprite2D.visible = false
 		queue_free()
 

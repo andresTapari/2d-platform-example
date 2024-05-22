@@ -82,6 +82,6 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vlp3s")
-animation = &"big"
+animation = &"small"
 script = ExtResource("17_g6bxb")
 currentAnimation = "small"

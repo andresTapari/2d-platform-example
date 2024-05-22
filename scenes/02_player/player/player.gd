@@ -7,6 +7,9 @@ extends CharacterBody2D
 ## Daño generado
 @export var damage = 1
 
+var SWORD = preload(Globals.THROW_SWORD_PATH)
+
+
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")	# Gravedad
 var stateMachine																# Maquina de estados	
 var attackEn = false
@@ -74,7 +77,9 @@ func handle_attack() -> void:
 			velocity.y = jumpVelocity / 2
 			stateMachine.travel(airAttackNames[airCombo])
 			airCombo = airCombo + 1 if airCombo < 1 else 0
-			
+	if Input.is_action_just_pressed("ui_throw_sword"):
+		stateMachine.travel("throw_sword")
+
 func attack() -> void:
 	attackEn = false
 	%RayCast2D.force_raycast_update()
@@ -82,4 +87,10 @@ func attack() -> void:
 	if collider:
 		if collider.is_in_group("breackable"):
 			collider.hit(damage,%RayCast2D.global_position)
-			#collider.apply_impulse(Vector2(1,-1)*100)
+
+func throw_sword() -> void:
+	var new_sword = SWORD.instantiate()
+	new_sword.global_position = %Marker2D.global_position
+	new_sword.direction.x =  $AnimatedSprite2D.scale.x
+	get_tree().current_scene.add_child(new_sword)
+
