@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://dm074ic1d1q1m"]
+
+[ext_resource type="Texture2D" uid="uid://dgb6qpiew0q8w" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Destroyed/1.png" id="1_3cw8n"]
+[ext_resource type="Script" path="res://scenes/06_breackableProps/barrel/barrel.gd" id="1_5aibb"]
+[ext_resource type="Texture2D" uid="uid://dow2nwe4cyl22" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Hit/1.png" id="2_o2cbr"]
+[ext_resource type="Texture2D" uid="uid://ded1prhtph7i" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Hit/2.png" id="3_aapks"]
+[ext_resource type="Texture2D" uid="uid://dkj1ru5p0ruia" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Hit/3.png" id="4_1qjpf"]
+[ext_resource type="Texture2D" uid="uid://bhj44ttqt5n5p" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Hit/4.png" id="5_tb2kv"]
+[ext_resource type="Texture2D" uid="uid://ce0oskugcsxqg" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Idle/1.png" id="6_x6odh"]
+[ext_resource type="PackedScene" uid="uid://57o28lcboney" path="res://scenes/06_breackableProps/barrel/barrelPart.tscn" id="8_onpvh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bqp84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3cw8n")
+}],
+"loop": false,
+"name": &"destroy",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o2cbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aapks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1qjpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tb2kv")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_x6odh")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mxrm"]
+size = Vector2(23, 25.5)
+
+[node name="Barrel" type="RigidBody2D" groups=["breackable"]]
+collision_layer = 2
+collision_mask = 2
+lock_rotation = true
+script = ExtResource("1_5aibb")
+
+[node name="Parts" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="RigidBody2D" parent="Parts" instance=ExtResource("8_onpvh")]
+visible = false
+position = Vector2(-5, -7)
+
+[node name="RigidBody2D2" parent="Parts" instance=ExtResource("8_onpvh")]
+visible = false
+position = Vector2(4, -7)
+spriteFrame = 1
+
+[node name="RigidBody2D3" parent="Parts" instance=ExtResource("8_onpvh")]
+visible = false
+position = Vector2(-4, 3)
+spriteFrame = 2
+
+[node name="RigidBody2D4" parent="Parts" instance=ExtResource("8_onpvh")]
+visible = false
+position = Vector2(3, 4)
+spriteFrame = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_bqp84")
+animation = &"destroy"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.25)
+shape = SubResource("RectangleShape2D_5mxrm")

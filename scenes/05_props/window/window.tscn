@@ -1,0 +1,319 @@
+[gd_scene load_steps=77 format=3 uid="uid://b7yib7rivo8jc"]
+
+[ext_resource type="Texture2D" uid="uid://xg0jwatiwd7r" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/01.png" id="1_5d8jy"]
+[ext_resource type="Texture2D" uid="uid://cvkbmwf0fv1mg" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/02.png" id="2_jn0vj"]
+[ext_resource type="Texture2D" uid="uid://bngqidh3l5s27" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/03.png" id="3_f65bu"]
+[ext_resource type="Texture2D" uid="uid://ckkw6f0a3x18m" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/04.png" id="4_ukraw"]
+[ext_resource type="Texture2D" uid="uid://c0r1qkbriw5vt" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/05.png" id="5_8xrmr"]
+[ext_resource type="Texture2D" uid="uid://cbde15qd38u3j" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/06.png" id="6_sotec"]
+[ext_resource type="Texture2D" uid="uid://v7sxqhx80fwv" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/07.png" id="7_jycmv"]
+[ext_resource type="Texture2D" uid="uid://pl0ji4hq7j3x" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/08.png" id="8_dqfbp"]
+[ext_resource type="Texture2D" uid="uid://ch70nhmoqonwr" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/09.png" id="9_l6cpx"]
+[ext_resource type="Texture2D" uid="uid://dcji6s1h0uj4a" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/10.png" id="10_sghhb"]
+[ext_resource type="Texture2D" uid="uid://cpoebwhkspq6y" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/11.png" id="11_ll8ec"]
+[ext_resource type="Texture2D" uid="uid://oy0mowrym6sn" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/12.png" id="12_6puvb"]
+[ext_resource type="Texture2D" uid="uid://df00krhx2rnaf" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/13.png" id="13_nvfog"]
+[ext_resource type="Texture2D" uid="uid://bc33bee5s2m6s" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/14.png" id="14_8nwgc"]
+[ext_resource type="Texture2D" uid="uid://bmvuyk0bsswmf" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/15.png" id="15_kfo5q"]
+[ext_resource type="Texture2D" uid="uid://yy47lqqnspnh" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/16.png" id="16_y2bfj"]
+[ext_resource type="Texture2D" uid="uid://do4t6ibujj4yh" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/17.png" id="17_t82ma"]
+[ext_resource type="Texture2D" uid="uid://bub2hnf4vnhti" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/18.png" id="18_pq7dd"]
+[ext_resource type="Texture2D" uid="uid://c33r72nq5nfnx" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/19.png" id="19_dmo3q"]
+[ext_resource type="Texture2D" uid="uid://0ndxhehdv046" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/20.png" id="20_6bvkv"]
+[ext_resource type="Texture2D" uid="uid://b4oqfpeet6dhc" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/21.png" id="21_85ed5"]
+[ext_resource type="Texture2D" uid="uid://clmfcil7men6f" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/22.png" id="22_xc14f"]
+[ext_resource type="Texture2D" uid="uid://b54l4fx0rqiig" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/23.png" id="23_dr5r5"]
+[ext_resource type="Texture2D" uid="uid://jarymd1ft6h2" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/24.png" id="24_m4uaa"]
+[ext_resource type="Texture2D" uid="uid://bsvbpckd1ogud" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/25.png" id="25_xb5v1"]
+[ext_resource type="Texture2D" uid="uid://cwgscddfplj2y" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/26.png" id="26_tgg5t"]
+[ext_resource type="Texture2D" uid="uid://cyn5323vr2253" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/27.png" id="27_nx02a"]
+[ext_resource type="Texture2D" uid="uid://cw6sfkbfu5ijp" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/28.png" id="28_lo445"]
+[ext_resource type="Texture2D" uid="uid://dqcslf3ak15s4" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/29.png" id="29_2dtnf"]
+[ext_resource type="Texture2D" uid="uid://c0vau21h3epx2" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/30.png" id="30_ttrdv"]
+[ext_resource type="Texture2D" uid="uid://cevrly305ak0p" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/31.png" id="31_rq328"]
+[ext_resource type="Texture2D" uid="uid://dcfv77454qnem" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/32.png" id="32_awu7r"]
+[ext_resource type="Texture2D" uid="uid://c1mhb3fwqtn5s" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/33.png" id="33_8fmvp"]
+[ext_resource type="Texture2D" uid="uid://b21as68re5or4" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/34.png" id="34_5l80u"]
+[ext_resource type="Texture2D" uid="uid://dy02embqhxbgx" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/35.png" id="35_5qcft"]
+[ext_resource type="Texture2D" uid="uid://d3n6dl3d0ebbn" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/36.png" id="36_f4cpg"]
+[ext_resource type="Texture2D" uid="uid://ru4tl1ht2xj7" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/37.png" id="37_a71j8"]
+[ext_resource type="Texture2D" uid="uid://djbyemib5clv4" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/38.png" id="38_mwiwo"]
+[ext_resource type="Texture2D" uid="uid://ctgbsnm3iuiwm" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/39.png" id="39_4745c"]
+[ext_resource type="Texture2D" uid="uid://4ndd8gl6kccv" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/40.png" id="40_rxfqa"]
+[ext_resource type="Texture2D" uid="uid://bi32e0hrt20un" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/41.png" id="41_juprn"]
+[ext_resource type="Texture2D" uid="uid://b6sc67v2mjiw5" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/42.png" id="42_81xo4"]
+[ext_resource type="Texture2D" uid="uid://dlxbnrbxdnvrg" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/43.png" id="43_8drxb"]
+[ext_resource type="Texture2D" uid="uid://cboy0r0576ym5" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/44.png" id="44_s4g8m"]
+[ext_resource type="Texture2D" uid="uid://d1hhbhs10nvuy" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/45.png" id="45_m3f7c"]
+[ext_resource type="Texture2D" uid="uid://by8myaqfqraac" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/46.png" id="46_n2icw"]
+[ext_resource type="Texture2D" uid="uid://di4moq216clm5" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/47.png" id="47_t44sc"]
+[ext_resource type="Texture2D" uid="uid://bg27umdq4f5u4" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/48.png" id="48_dsnv1"]
+[ext_resource type="Texture2D" uid="uid://etqnp4p8ngrx" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/49.png" id="49_stci7"]
+[ext_resource type="Texture2D" uid="uid://cerimkckjeof7" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/50.png" id="50_fmmma"]
+[ext_resource type="Texture2D" uid="uid://cthnfgfv4c6fr" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/51.png" id="51_hjkte"]
+[ext_resource type="Texture2D" uid="uid://bvs8lxddelhix" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/52.png" id="52_r46so"]
+[ext_resource type="Texture2D" uid="uid://ct15obu4hm7by" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/53.png" id="53_3a4kx"]
+[ext_resource type="Texture2D" uid="uid://by6wu0i315exr" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/54.png" id="54_psl6q"]
+[ext_resource type="Texture2D" uid="uid://di0csbrlox86j" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/55.png" id="55_oierf"]
+[ext_resource type="Texture2D" uid="uid://cafpldwlucw0l" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/56.png" id="56_wt3ja"]
+[ext_resource type="Texture2D" uid="uid://db62p2obijqi7" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/57.png" id="57_8q7ml"]
+[ext_resource type="Texture2D" uid="uid://dhg4nlaqsyi6n" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/58.png" id="58_frtgs"]
+[ext_resource type="Texture2D" uid="uid://dji5vfqulphtd" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/59.png" id="59_tfgqf"]
+[ext_resource type="Texture2D" uid="uid://ch4x40elalftw" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/60.png" id="60_6q7fl"]
+[ext_resource type="Texture2D" uid="uid://b2743ov2tclhv" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/61.png" id="61_8flqb"]
+[ext_resource type="Texture2D" uid="uid://c3iukc6qu1yu1" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/62.png" id="62_446gn"]
+[ext_resource type="Texture2D" uid="uid://kccpddi6ydnw" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/63.png" id="63_jqob8"]
+[ext_resource type="Texture2D" uid="uid://cr2vfiooghgny" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/64.png" id="64_blyvy"]
+[ext_resource type="Texture2D" uid="uid://b2pffldalc3n4" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/65.png" id="65_8427h"]
+[ext_resource type="Texture2D" uid="uid://b2rcibr7ivdn1" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/66.png" id="66_mgahr"]
+[ext_resource type="Texture2D" uid="uid://dn4o0t6rrka4h" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/67.png" id="67_wssi0"]
+[ext_resource type="Texture2D" uid="uid://dseffjch8k0qg" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/68.png" id="68_3vkwe"]
+[ext_resource type="Texture2D" uid="uid://c03ljytlmp5lw" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/69.png" id="69_ivo4y"]
+[ext_resource type="Texture2D" uid="uid://dbt8557cmklyy" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/70.png" id="70_3slph"]
+[ext_resource type="Texture2D" uid="uid://c803tfghxn2dy" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/71.png" id="71_pnd1o"]
+[ext_resource type="Texture2D" uid="uid://cn3h3so313u8o" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/72.png" id="72_bfknq"]
+[ext_resource type="Texture2D" uid="uid://brqawvt213x4w" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/73.png" id="73_p1u15"]
+[ext_resource type="Texture2D" uid="uid://ctynun2vogex6" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window/74.png" id="74_tfswo"]
+[ext_resource type="Texture2D" uid="uid://qucjwvgnjyxb" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Window/Window Light/01.png" id="75_1tcqi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4jvv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5d8jy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jn0vj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f65bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ukraw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8xrmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sotec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jycmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dqfbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l6cpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sghhb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ll8ec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6puvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nvfog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8nwgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kfo5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_y2bfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t82ma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pq7dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_dmo3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6bvkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_85ed5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xc14f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dr5r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_m4uaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xb5v1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tgg5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_nx02a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_lo445")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_2dtnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ttrdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_rq328")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_awu7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8fmvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_5l80u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_5qcft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_f4cpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_a71j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_mwiwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_4745c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_rxfqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_juprn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_81xo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_8drxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_s4g8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_m3f7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_n2icw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_t44sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_dsnv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_stci7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_fmmma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_hjkte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_r46so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_3a4kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_psl6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_oierf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_wt3ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_8q7ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_frtgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_tfgqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_6q7fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_8flqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_446gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_jqob8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_blyvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_8427h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_mgahr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_wssi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_3vkwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_ivo4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_3slph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_pnd1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_bfknq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_p1u15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_tfswo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Window" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_h4jvv")
+autoplay = "default"
+frame_progress = 0.44077
+
+[node name="01" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(-29, 28)
+texture = ExtResource("75_1tcqi")

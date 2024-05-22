@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bl6omphcmkyh7"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bl6omphcmkyh7"]
 
 [ext_resource type="Texture2D" uid="uid://bdp5o6djj4uj3" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="1_cjeay"]
+[ext_resource type="Texture2D" uid="uid://c20vmb5atnhd4" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Platforms (32x32).png" id="2_qehbu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urfcd"]
 texture = ExtResource("1_cjeay")
@@ -890,13 +891,84 @@ texture_region_size = Vector2i(32, 32)
 13:11/0/terrains_peering_bit/left_side = 0
 13:11/0/terrains_peering_bit/top_side = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_06vr8"]
+texture = ExtResource("2_qehbu")
+texture_region_size = Vector2i(32, 32)
+1:1/0 = 0
+1:1/0/terrain_set = 2
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -15, 16, -15, 16, -8, -16, -8)
+1:1/0/physics_layer_0/polygon_0/one_way = true
+1:1/0/terrains_peering_bit/right_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 2
+2:1/0/terrain = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -15, 16, -15, 16, -8, -16, -8)
+2:1/0/physics_layer_0/polygon_0/one_way = true
+2:1/0/terrains_peering_bit/right_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 2
+3:1/0/terrain = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -15, 16, -15, 16, -8, -16, -8)
+3:1/0/physics_layer_0/polygon_0/one_way = true
+3:1/0/terrains_peering_bit/left_side = 0
+4:1/0 = 0
+4:1/0/terrain_set = 2
+4:1/0/terrain = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -15, 16, -15, 16, -8, -16, -8)
+4:1/0/physics_layer_0/polygon_0/one_way = true
+1:2/0 = 0
+1:2/0/terrain_set = 2
+1:2/0/terrain = 1
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -15, 16, -15, 16, -8, -16, -8)
+1:2/0/terrains_peering_bit/right_side = 1
+2:2/0 = 0
+2:2/0/terrain_set = 2
+2:2/0/terrain = 1
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -15, 16, -15, 16, -8, -16, -8)
+2:2/0/terrains_peering_bit/right_side = 1
+2:2/0/terrains_peering_bit/left_side = 1
+3:2/0 = 0
+3:2/0/terrain_set = 2
+3:2/0/terrain = 1
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -15, 16, -15, 16, -8, -16, -8)
+3:2/0/terrains_peering_bit/left_side = 1
+4:2/0 = 0
+4:2/0/terrain_set = 2
+4:2/0/terrain = 1
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -15, 16, -15, 16, -8, -16, -8)
+
 [resource]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "back_ground"
 terrain_set_0/terrain_0/color = Color(0, 1, 0.015625, 1)
 terrain_set_1/mode = 0
-terrain_set_1/terrain_0/name = "Platforms"
+terrain_set_1/terrain_0/name = "LvlLimits"
 terrain_set_1/terrain_0/color = Color(1, 0, 0, 1)
+terrain_set_2/mode = 0
+terrain_set_2/terrain_0/name = "PlatfomsOneWayColission"
+terrain_set_2/terrain_0/color = Color(0, 0.15625, 1, 1)
+terrain_set_2/terrain_1/name = "PlatFormsStatic"
+terrain_set_2/terrain_1/color = Color(0, 0.953125, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_urfcd")
+sources/1 = SubResource("TileSetAtlasSource_06vr8")

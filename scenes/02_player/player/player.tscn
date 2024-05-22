@@ -75,6 +75,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/RayCast2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_vfnjk"]
 resource_name = "air_attack_1"
@@ -116,6 +128,18 @@ tracks/2/keys = {
 "args": [],
 "method": &"attack"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D/RayCast2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.785398]
 }
 
 [sub_resource type="Animation" id="Animation_bj5ay"]
@@ -159,6 +183,18 @@ tracks/2/keys = {
 "method": &"attack"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D/RayCast2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.785398]
+}
 
 [sub_resource type="Animation" id="Animation_26ato"]
 resource_name = "attack_1"
@@ -200,6 +236,18 @@ tracks/2/keys = {
 "args": [],
 "method": &"attack"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D/RayCast2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_816mt"]
@@ -243,6 +291,18 @@ tracks/2/keys = {
 "method": &"attack"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D/RayCast2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_8ek4n"]
 resource_name = "attack_3"
@@ -284,6 +344,18 @@ tracks/2/keys = {
 "args": [],
 "method": &"attack"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D/RayCast2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_qepiq"]
@@ -754,8 +826,10 @@ sprite_frames = SubResource("SpriteFrames_xno7y")
 animation = &"idle"
 
 [node name="RayCast2D" type="RayCast2D" parent="AnimatedSprite2D"]
+unique_name_in_owner = true
 position = Vector2(0, 4)
 target_position = Vector2(28, 0)
+collision_mask = 3
 
 [node name="ComboTimer" type="Timer" parent="."]
 unique_name_in_owner = true

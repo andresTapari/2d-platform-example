@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://57o28lcboney"]
+
+[ext_resource type="Script" path="res://scenes/06_breackableProps/barrel/barrelParts.gd" id="1_ikc8t"]
+[ext_resource type="Texture2D" uid="uid://b0jmqkn6lup5w" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Destroyed/2.png" id="2_kbdg6"]
+[ext_resource type="Texture2D" uid="uid://h48t3a3hpud0" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Destroyed/3.png" id="3_fx3bx"]
+[ext_resource type="Texture2D" uid="uid://bq6aag1umkft4" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Destroyed/4.png" id="4_tvf1y"]
+[ext_resource type="Texture2D" uid="uid://bvs4ckbw0qrpf" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Destroyed/5.png" id="5_dol25"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qitiu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kbdg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fx3bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tvf1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dol25")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fewv"]
+size = Vector2(12, 13)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 0.5
+freeze = true
+script = ExtResource("1_ikc8t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_qitiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+shape = SubResource("RectangleShape2D_8fewv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

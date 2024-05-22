@@ -1,0 +1,87 @@
+[gd_scene load_steps=19 format=3 uid="uid://c26xne7u5mq4u"]
+
+[ext_resource type="Texture2D" uid="uid://hoxyr3yht865" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/01.png" id="1_jteyb"]
+[ext_resource type="Texture2D" uid="uid://c0wl8cym2ucbp" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/02.png" id="2_dfyl5"]
+[ext_resource type="Texture2D" uid="uid://csapb7hidk4sl" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/03.png" id="3_swbse"]
+[ext_resource type="Texture2D" uid="uid://co206siraq7v2" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/04.png" id="4_4eu7f"]
+[ext_resource type="Texture2D" uid="uid://c517ef5sp7so8" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/05.png" id="5_t4nn3"]
+[ext_resource type="Texture2D" uid="uid://bncuaid0ihgy4" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/06.png" id="6_13pgc"]
+[ext_resource type="Texture2D" uid="uid://e3634a8sayuw" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/07.png" id="7_ylxyw"]
+[ext_resource type="Texture2D" uid="uid://bpwxu1u2x83bn" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Big/08.png" id="8_0jhqv"]
+[ext_resource type="Texture2D" uid="uid://bftga0wl5dwso" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/01.png" id="9_mqqqu"]
+[ext_resource type="Texture2D" uid="uid://b0oas2s78yjox" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/02.png" id="10_6ng8f"]
+[ext_resource type="Texture2D" uid="uid://l1sacejj64en" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/03.png" id="11_0amxy"]
+[ext_resource type="Texture2D" uid="uid://b4b0t7mjb2e7b" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/04.png" id="12_ast4j"]
+[ext_resource type="Texture2D" uid="uid://dndpv2xxkkwu8" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/05.png" id="13_3nkxe"]
+[ext_resource type="Texture2D" uid="uid://bopc1ua84iofm" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/06.png" id="14_6tqu7"]
+[ext_resource type="Texture2D" uid="uid://bjdmasenypmkd" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/07.png" id="15_baxxg"]
+[ext_resource type="Texture2D" uid="uid://chns0j4hv61en" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Chains/Small/08.png" id="16_8x6jy"]
+[ext_resource type="Script" path="res://scenes/05_props/chains/chains.gd" id="17_g6bxb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vlp3s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jteyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dfyl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_swbse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4eu7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t4nn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_13pgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ylxyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0jhqv")
+}],
+"loop": true,
+"name": &"big",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_mqqqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6ng8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0amxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ast4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3nkxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6tqu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_baxxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8x6jy")
+}],
+"loop": true,
+"name": &"small",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_vlp3s")
+animation = &"big"
+script = ExtResource("17_g6bxb")
+currentAnimation = "small"

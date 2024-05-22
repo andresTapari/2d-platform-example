@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjhgmqtvnwtnw"]
+
+[ext_resource type="Texture2D" uid="uid://glm1kuf17nd6" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Barrels and Bottles/01.png" id="1_ud7id"]
+[ext_resource type="Texture2D" uid="uid://g6o17441n8ic" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Barrels and Bottles/02.png" id="2_p4hxr"]
+[ext_resource type="Texture2D" uid="uid://6hdhoytqrq0k" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Barrels and Bottles/03.png" id="3_ap4fu"]
+[ext_resource type="Texture2D" uid="uid://w6ji3prvxrxk" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Barrels and Bottles/04.png" id="4_n51o5"]
+[ext_resource type="Texture2D" uid="uid://bqpjqqwespij2" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Barrels and Bottles/05.png" id="5_gh551"]
+[ext_resource type="Texture2D" uid="uid://tvxc170nd34g" path="res://assets/Treasure Hunters/Pirate Ship/Sprites/Decorations/Barrels and Bottles/06.png" id="6_rmaxg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_821ty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ud7id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p4hxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ap4fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n51o5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gh551")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rmaxg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="barrelAndBottle" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_821ty")

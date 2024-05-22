@@ -4,11 +4,14 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 ## Velocidad de salto
 @export var jumpVelocity = -400.0
-
+## Daño generado
+@export var damage = 1
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")	# Gravedad
 var stateMachine																# Maquina de estados	
 var attackEn = false
+var groundAttackNames = ["attack_1","attack_2","attack_3"]
+var airAttackNames = ["air_attack_1","air_attack_2"]
 var groundCombo = 0
 var airCombo 	= 0
 
@@ -65,24 +68,18 @@ func handle_attack() -> void:
 	if Input.is_action_just_pressed("ui_attack"):
 		attackEn = true
 		if is_on_floor():
-			groundCombo += 1
-			match groundCombo:
-				1:
-					stateMachine.travel("attack_1")
-				2:
-					stateMachine.travel("attack_2")
-				3:
-					stateMachine.travel("attack_3")
-					groundCombo = 0
+			stateMachine.travel(groundAttackNames[groundCombo])
+			groundCombo = groundCombo + 1 if groundCombo < 2 else 0
 		else:
-			airCombo += 1
-			velocity.y = jumpVelocity/2
-			match airCombo:
-				1:
-					stateMachine.travel("air_attack_1")
-				2:
-					stateMachine.travel("air_attack_2")
-					airCombo = 0
-
+			velocity.y = jumpVelocity / 2
+			stateMachine.travel(airAttackNames[airCombo])
+			airCombo = airCombo + 1 if airCombo < 1 else 0
+			
 func attack() -> void:
 	attackEn = false
+	%RayCast2D.force_raycast_update()
+	var collider  = %RayCast2D.get_collider()
+	if collider:
+		if collider.is_in_group("breackable"):
+			collider.hit(damage,%RayCast2D.global_position)
+			#collider.apply_impulse(Vector2(1,-1)*100)
