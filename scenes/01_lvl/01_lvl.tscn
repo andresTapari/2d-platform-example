@@ -45,12 +45,12 @@ scale = Vector2(1, 1.07206)
 
 [node name="AnimatedSprite2D" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(144, 176)
-frame_progress = 0.845378
+frame_progress = 0.653726
 
 [node name="AnimatedSprite2D5" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(112, 192)
 animation = &"big"
-frame_progress = 0.843193
+frame_progress = 0.651541
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D6" parent="props" instance=ExtResource("5_mrqk0")]
@@ -61,6 +61,15 @@ position = Vector2(772, 210)
 
 [node name="Area2D" parent="." instance=ExtResource("3_j0lc8")]
 position = Vector2(601, 204)
+
+[node name="Area2D2" parent="." instance=ExtResource("3_j0lc8")]
+position = Vector2(582, 204)
+
+[node name="Area2D3" parent="." instance=ExtResource("3_j0lc8")]
+position = Vector2(564, 204)
+
+[node name="Area2D4" parent="." instance=ExtResource("3_j0lc8")]
+position = Vector2(547, 204)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_s4e2a")]
 position = Vector2(669, 223)
