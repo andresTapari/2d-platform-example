@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dct4rj7hen30x"]
+[gd_scene load_steps=11 format=3 uid="uid://dct4rj7hen30x"]
 
 [ext_resource type="PackedScene" uid="uid://b7yib7rivo8jc" path="res://scenes/05_props/window/window.tscn" id="1_f7lqh"]
 [ext_resource type="TileSet" uid="uid://bl6omphcmkyh7" path="res://assets/resources/TileSetPirateShip.tres" id="1_gb2fi"]
@@ -9,8 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://c26xne7u5mq4u" path="res://scenes/05_props/chains/chains.tscn" id="4_qv1ds"]
 [ext_resource type="PackedScene" uid="uid://bpw0fe6qbcs8" path="res://scenes/05_props/candle/candle.tscn" id="5_mrqk0"]
 [ext_resource type="PackedScene" uid="uid://dm074ic1d1q1m" path="res://scenes/06_breackableProps/barrel/barrel.tscn" id="9_np51w"]
+[ext_resource type="PackedScene" uid="uid://85refhdro715" path="res://scenes/08_hud/hud.tscn" id="10_y338n"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Hud" parent="." instance=ExtResource("10_y338n")]
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -42,29 +45,29 @@ scale = Vector2(1, 1.07206)
 
 [node name="AnimatedSprite2D" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(144, 176)
-frame_progress = 0.269924
+frame_progress = 0.845378
 
 [node name="AnimatedSprite2D5" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(112, 192)
 animation = &"big"
-frame_progress = 0.267739
+frame_progress = 0.843193
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D6" parent="props" instance=ExtResource("5_mrqk0")]
 position = Vector2(816, 216)
 
 [node name="Barrel" parent="." instance=ExtResource("9_np51w")]
-position = Vector2(750.043, 208.189)
+position = Vector2(772, 210)
 
 [node name="Area2D" parent="." instance=ExtResource("3_j0lc8")]
 position = Vector2(601, 204)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_s4e2a")]
-position = Vector2(689, 213)
+position = Vector2(669, 223)
 jumpVelocity = -300.0
 
 [node name="InterpolatedCamera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_5jnh4")]
-position = Vector2(654, 198)
+position = Vector2(617, 187)
 zoom = Vector2(2, 2)
 player = NodePath("../CharacterBody2D")
 resposne = 0.25

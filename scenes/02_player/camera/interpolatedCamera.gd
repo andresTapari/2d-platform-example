@@ -5,7 +5,7 @@ extends Camera2D
 ## Velocidad de respuesta de la camara
 @export var resposne: float = 0.1
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Si existe player:
 	if player:
 		global_position = lerp(global_position, player.global_position, 0.1)
