@@ -9,12 +9,13 @@ var currentHealth = health
 
 ## 
 func hit(incomeDamage: int, incomeDamagePosition: Vector2 = Vector2.ZERO) -> void:
+	# Calculamos Impulso
+	var dir : Vector2 = (global_position - incomeDamagePosition).normalized()
+	var impulse: Vector2 = Vector2(dir.x , -1) * jumpForce
 	# Descontar vida
 	currentHealth -= incomeDamage
 	if currentHealth <= 0:
 		for parts in %Parts.get_children():
-			var dir : Vector2 = (global_position - incomeDamagePosition).normalized()
-			var impulse: Vector2 = Vector2(dir.x , -1) * jumpForce
 			parts.set_deferred("freeze",false)
 			parts.visible = true
 			parts.get_node("Timer").start()
@@ -23,9 +24,6 @@ func hit(incomeDamage: int, incomeDamagePosition: Vector2 = Vector2.ZERO) -> voi
 		%AnimatedSprite2D.visible = false
 		queue_free()
 
-	# Aplicamos impulso
-	var dir : Vector2 = (global_position - incomeDamagePosition).normalized()
-	var impulse: Vector2 = Vector2(dir.x , -1) * jumpForce
 	apply_impulse(impulse)
 
 	# Actualizamos animacion

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 ##Señales:
 signal health_changed(currentHealth, maxHealth)
+signal game_over
 
 ## Velocidad del personaje
 @export var speed: float = 200.0
@@ -11,13 +12,19 @@ signal health_changed(currentHealth, maxHealth)
 @export var damage = 1
 ## Vida del personaje
 @export var maxHealth = 10
+## Personaje
+@export var backlashForce = 150
+## Control del personaje
+@export var playerControlEn: bool = true
+## 
+@export var playerAlive: bool = true
 
 ## Escenas precargadas
 var SWORD = preload(Globals.THROW_SWORD_PATH)
 
 ## Variables
+var stateMachine: AnimationNodeStateMachinePlayback								# Maquina de estados
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")	# Gravedad
-var stateMachine																# Maquina de estados
 var groundAttackNames 	: Array = ["attack_1","attack_2","attack_3"]			# Lista de nombres con las animaciones de ataque terrestre
 var airAttackNames 		: Array = ["air_attack_1","air_attack_2"]				# Lista de nombres con las animaciones de ataque aereo
 var groundAtackCounter 	: int = 0												# Contador de ataque terrestre
@@ -27,20 +34,25 @@ var currentHealth		: int = maxHealth
 func _ready() -> void:
 	# Cargamos maquina de estado
 	stateMachine = $AnimationTree.get("parameters/playback")
+	print(stateMachine)
 	# Reproducimos animación por defecto
 	stateMachine.travel("idle")
 	# Actualizamos vida
 	health_changed.emit(currentHealth,maxHealth)
 	
 func _physics_process(delta: float) -> void:
+	if not playerAlive:
+		return
+	
 	# Agregamos gravedad
 	apply_gravity(delta)
-	# Administramos salto
-	handle_jump()
-	# Administramos movimientos
-	handle_movement()
-	# Administramos ataque
-	handle_attack()
+	if playerControlEn:
+		# Administramos salto
+		handle_jump()
+		# Administramos movimientos
+		handle_movement()
+		# Administramos ataque
+		handle_attack()
 	# Movemos el personaje
 	move_and_slide()
 
@@ -106,3 +118,19 @@ func throw_sword() -> void:
 	new_sword.global_position = %Marker2D.global_position
 	new_sword.direction.x =  $AnimatedSprite2D.scale.x
 	get_tree().current_scene.add_child(new_sword)
+
+func hurt(incomeDamage: int, damageSourceGlobalPosition: Vector2) -> void:
+	playerControlEn = false
+	currentHealth -= incomeDamage
+	if currentHealth > 0:
+		stateMachine.travel("hit")
+	else:
+		stateMachine.travel("dead_ground")
+		
+	health_changed.emit(currentHealth, maxHealth)
+	var dirX = 1 if global_position.x > damageSourceGlobalPosition.x else -1
+	velocity = Vector2(backlashForce*dirX , -backlashForce)
+	$AnimatedSprite2D.scale.x = 1 if velocity.x < 0 else -1
+
+func game_over_event() -> void:
+	game_over.emit()
