@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-##Señales:
-signal health_changed(currentHealth, maxHealth)
+#Señales:
+## Se emite cuando la vida del personaje cambia.
+signal health_changed(currentHealth: int, maxHealth: int)
+## Se emite automaticamente cuadndo termina la animacion de muerte del personaje.
 signal game_over
 
 ## Velocidad del personaje
@@ -16,7 +18,7 @@ signal game_over
 @export var backlashForce = 150
 ## Control del personaje
 @export var playerControlEn: bool = true
-## 
+## Si el jugador esta vivo
 @export var playerAlive: bool = true
 
 ## Escenas precargadas
@@ -39,11 +41,10 @@ func _ready() -> void:
 	stateMachine.travel("idle")
 	# Actualizamos vida
 	health_changed.emit(currentHealth,maxHealth)
-	
+
 func _physics_process(delta: float) -> void:
 	if not playerAlive:
 		return
-	
 	# Agregamos gravedad
 	apply_gravity(delta)
 	if playerControlEn:
@@ -74,7 +75,7 @@ func handle_jump() -> void:
 ## Administra el movimiento
 func handle_movement() -> void:
 	# Obtenemos entradas de movimiento del jugador:
-	var direction := Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left") 
+	var direction := Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	if direction:
 		velocity.x = direction * speed
 		# Rotamos sprites
@@ -119,6 +120,7 @@ func throw_sword() -> void:
 	new_sword.direction.x =  $AnimatedSprite2D.scale.x
 	get_tree().current_scene.add_child(new_sword)
 
+## Esta funcion se ejecuta cuando el jugador percibe daño
 func hurt(incomeDamage: int, damageSourceGlobalPosition: Vector2) -> void:
 	playerControlEn = false
 	currentHealth -= incomeDamage
@@ -126,11 +128,11 @@ func hurt(incomeDamage: int, damageSourceGlobalPosition: Vector2) -> void:
 		stateMachine.travel("hit")
 	else:
 		stateMachine.travel("dead_ground")
-		
 	health_changed.emit(currentHealth, maxHealth)
 	var dirX = 1 if global_position.x > damageSourceGlobalPosition.x else -1
 	velocity = Vector2(backlashForce*dirX , -backlashForce)
 	$AnimatedSprite2D.scale.x = 1 if velocity.x < 0 else -1
 
+## Se ejecuta cuando termina la animacion dead_ground
 func game_over_event() -> void:
 	game_over.emit()
