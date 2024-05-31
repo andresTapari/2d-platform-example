@@ -36,7 +36,6 @@ var currentHealth		: int = maxHealth
 func _ready() -> void:
 	# Cargamos maquina de estado
 	stateMachine = $AnimationTree.get("parameters/playback")
-	print(stateMachine)
 	# Reproducimos animación por defecto
 	stateMachine.travel("idle")
 	# Actualizamos vida

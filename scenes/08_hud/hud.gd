@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var GAME_OVER_SCREEN = preload("res://scenes/10_mainMenu/game_over/gameOverScreen.tscn")
 
 func _ready():
 	# Conectamos señales de player
@@ -8,7 +9,10 @@ func _ready():
 		player.health_changed.connect(func (currentHealth, maxHealth):
 			%healthBar.update_value(currentHealth,maxHealth)
 			)
-
+		player.game_over.connect(func ():
+			var newDlg = GAME_OVER_SCREEN.instantiate()
+			add_child(newDlg)
+			)
 	# Conectamos señales de monedas
 	var coins = get_tree().get_nodes_in_group("pickable")
 	for coin in coins:

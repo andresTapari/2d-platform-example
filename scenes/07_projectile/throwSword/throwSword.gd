@@ -10,10 +10,8 @@ var direction : Vector2 = Vector2.ZERO:
 		direction = value
 		$AnimatedSprite2D.scale.x = direction.x
 
-
 func _process(delta):
 	position.x += direction.x * delta * speed
-
 
 func _on_body_entered(body):
 	if body.is_in_group("breackable"):
