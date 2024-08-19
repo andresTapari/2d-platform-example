@@ -9,7 +9,7 @@ signal game_over
 ## Velocidad del personaje
 @export var speed: float = 200.0
 ## Velocidad de salto
-@export var jumpVelocity = -400.0
+@export var jumpVelocity = -260
 ## Daño generado
 @export var damage = 1
 ## Vida del personaje

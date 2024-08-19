@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://d3jndvb8684gd"]
+
+[ext_resource type="FontFile" uid="uid://dsswu3q6cagtk" path="res://assets/fonts/pixelart.ttf" id="1_28b6k"]
+[ext_resource type="Texture2D" uid="uid://h7pyhdvk4su1" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Green Button/Green Button (guide).png" id="2_8htsk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ubwpf"]
+texture = ExtResource("2_8htsk")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.37826
+texture_margin_bottom = 5.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(0, 0, 14, 14)
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/h_separation = 4
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_28b6k")
+Button/styles/hover = SubResource("StyleBoxTexture_ubwpf")
+Button/styles/normal = SubResource("StyleBoxTexture_ubwpf")
+Button/styles/pressed = SubResource("StyleBoxTexture_ubwpf")

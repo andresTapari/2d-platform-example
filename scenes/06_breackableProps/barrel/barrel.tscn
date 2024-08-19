@@ -51,8 +51,6 @@ animations = [{
 size = Vector2(23, 25.5)
 
 [node name="Barrel" type="RigidBody2D" groups=["breackable"]]
-collision_layer = 2
-collision_mask = 2
 lock_rotation = true
 script = ExtResource("1_5aibb")
 
@@ -62,20 +60,28 @@ unique_name_in_owner = true
 [node name="RigidBody2D" parent="Parts" instance=ExtResource("8_onpvh")]
 visible = false
 position = Vector2(-5, -7)
+collision_layer = 2
+collision_mask = 2
 
 [node name="RigidBody2D2" parent="Parts" instance=ExtResource("8_onpvh")]
 visible = false
 position = Vector2(4, -7)
+collision_layer = 2
+collision_mask = 2
 spriteFrame = 1
 
 [node name="RigidBody2D3" parent="Parts" instance=ExtResource("8_onpvh")]
 visible = false
 position = Vector2(-4, 3)
+collision_layer = 2
+collision_mask = 2
 spriteFrame = 2
 
 [node name="RigidBody2D4" parent="Parts" instance=ExtResource("8_onpvh")]
 visible = false
 position = Vector2(3, 4)
+collision_layer = 2
+collision_mask = 2
 spriteFrame = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
