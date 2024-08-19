@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dm074ic1d1q1m"]
+[gd_scene load_steps=13 format=3 uid="uid://dm074ic1d1q1m"]
 
 [ext_resource type="Texture2D" uid="uid://dgb6qpiew0q8w" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Destroyed/1.png" id="1_3cw8n"]
 [ext_resource type="Script" path="res://scenes/06_breackableProps/barrel/barrel.gd" id="1_5aibb"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bhj44ttqt5n5p" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Hit/4.png" id="5_tb2kv"]
 [ext_resource type="Texture2D" uid="uid://ce0oskugcsxqg" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Barrel/Idle/1.png" id="6_x6odh"]
 [ext_resource type="PackedScene" uid="uid://57o28lcboney" path="res://scenes/06_breackableProps/barrel/barrelPart.tscn" id="8_onpvh"]
+[ext_resource type="AudioStream" uid="uid://dg11gd3uklo4" path="res://assets/fx/hitHurt.wav" id="9_ikgj8"]
+[ext_resource type="AudioStream" uid="uid://dwj1v3628o5q6" path="res://assets/fx/explosion_barrel.wav" id="10_op6un"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bqp84"]
 animations = [{
@@ -86,3 +88,11 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.25)
 shape = SubResource("RectangleShape2D_5mxrm")
+
+[node name="soundFx" type="Node" parent="."]
+
+[node name="hurt" type="AudioStreamPlayer" parent="soundFx"]
+stream = ExtResource("9_ikgj8")
+
+[node name="explosion" type="AudioStreamPlayer" parent="soundFx"]
+stream = ExtResource("10_op6un")

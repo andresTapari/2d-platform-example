@@ -13,5 +13,6 @@ func _on_body_entered(body):
 		picked.emit(score)
 		# Reproducimos animación
 		$AnimatedSprite2D.play("picked")
+		$AudioStreamPlayer.play()
 		# Conectamos señal que termina animación para eliminar la moneda
 		$AnimatedSprite2D.animation_finished.connect(func (): queue_free())

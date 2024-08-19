@@ -46,12 +46,12 @@ scale = Vector2(1, 1.07206)
 
 [node name="AnimatedSprite2D" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(144, 176)
-frame_progress = 0.827305
+frame_progress = 0.0404175
 
 [node name="AnimatedSprite2D5" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(112, 192)
 animation = &"big"
-frame_progress = 0.82512
+frame_progress = 0.0382324
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D6" parent="props" instance=ExtResource("5_mrqk0")]
