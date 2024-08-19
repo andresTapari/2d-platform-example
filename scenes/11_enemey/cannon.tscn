@@ -1,0 +1,295 @@
+[gd_scene load_steps=22 format=3 uid="uid://boavdbkkyhesd"]
+
+[ext_resource type="Texture2D" uid="uid://dlapeybfyyxv8" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Idle/1.png" id="1_7ymma"]
+[ext_resource type="Texture2D" uid="uid://dfupume6v6rdk" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/1.png" id="1_08ikj"]
+[ext_resource type="Script" path="res://scenes/11_enemey/cannon.gd" id="1_no6mb"]
+[ext_resource type="Texture2D" uid="uid://cc8gm5eksg580" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/2.png" id="2_n68xx"]
+[ext_resource type="Texture2D" uid="uid://cqj8gsxvxffr3" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/3.png" id="3_udmci"]
+[ext_resource type="Texture2D" uid="uid://b5p7ysi4yvrjc" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/4.png" id="4_fkieu"]
+[ext_resource type="Texture2D" uid="uid://dsprg8abtbn7c" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/5.png" id="5_8cjal"]
+[ext_resource type="Texture2D" uid="uid://bjaksicwqa6kx" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire/6.png" id="6_8herm"]
+[ext_resource type="Texture2D" uid="uid://bs532dtp5gvk7" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/1.png" id="8_kpl58"]
+[ext_resource type="Texture2D" uid="uid://cttramy5p5qja" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/2.png" id="9_adpue"]
+[ext_resource type="Texture2D" uid="uid://dnwk882tgi2qt" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/3.png" id="10_hkpjp"]
+[ext_resource type="Texture2D" uid="uid://bawdgyi1ntrpj" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/4.png" id="11_rf4xw"]
+[ext_resource type="Texture2D" uid="uid://qye6dwu0d8kh" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/5.png" id="12_8ds4p"]
+[ext_resource type="Texture2D" uid="uid://s6wtxatd1whs" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Cannon/Cannon Fire Effect/6.png" id="13_iljln"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_py5ll"]
+size = Vector2(25, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iod6k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_08ikj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n68xx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_udmci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fkieu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8cjal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8herm")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7ymma")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcodi"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_kpl58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_adpue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hkpjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rf4xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8ds4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iljln")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_3fpui"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fire"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/Marker2D/AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"shoot"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D/Marker2D/AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D/Marker2D/AnimatedSprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3e5tk"]
+resource_name = "fire"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fire"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/Marker2D/AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"idle", &"shoot"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D/Marker2D/AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D/Marker2D/AnimatedSprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}, {
+"args": [],
+"method": &"reset_animation_player"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_0ywxg"]
+resource_name = "idle"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ybabe"]
+_data = {
+"RESET": SubResource("Animation_3fpui"),
+"fire": SubResource("Animation_3e5tk"),
+"idle": SubResource("Animation_0ywxg")
+}
+
+[node name="cannon" type="Area2D"]
+script = ExtResource("1_no6mb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_py5ll")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_iod6k")
+animation = &"fire"
+
+[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D"]
+unique_name_in_owner = true
+position = Vector2(-15, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatedSprite2D/Marker2D"]
+visible = false
+position = Vector2(-9, -2)
+sprite_frames = SubResource("SpriteFrames_rcodi")
+animation = &"shoot"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ybabe")
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
