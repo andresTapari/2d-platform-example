@@ -13,7 +13,6 @@ func set_ready() -> void:
 	$AnimatedSprite2D.visible =false
 	%Label.text = "Presione una tecla para iniciar."
 
-
 ## Actualiza la barra de carga
 func update_progress(newProgress)  -> void:
 	%ProgressBar.value = newProgress * 100
