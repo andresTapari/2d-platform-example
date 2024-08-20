@@ -10,7 +10,9 @@ func _ready() -> void:
 	%LabelMessage.modulate = Color(1,1,1,0)
 
 func _on_body_entered(body: Node2D) -> void:
-	$AnimationPlayer.play("fadeIn")
+	if body.is_in_group("player"):
+		$AnimationPlayer.play("fadeIn")
 
 func _on_body_exited(body: Node2D) -> void:
-	$AnimationPlayer.play("fadeOut")
+	if body.is_in_group("player"):
+		$AnimationPlayer.play("fadeOut")
