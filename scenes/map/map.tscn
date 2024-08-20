@@ -1,0 +1,72 @@
+[gd_scene load_steps=15 format=3 uid="uid://bscxgoesn0mpj"]
+
+[ext_resource type="Script" path="res://scenes/map/map.gd" id="1_h4ta3"]
+[ext_resource type="Texture2D" uid="uid://br6umqpp0t1f4" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/01.png" id="1_qh5vt"]
+[ext_resource type="Texture2D" uid="uid://c7rgn1m41shv2" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/02.png" id="2_11ww5"]
+[ext_resource type="Texture2D" uid="uid://c4mxaibewkgk1" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/03.png" id="3_unf0a"]
+[ext_resource type="Texture2D" uid="uid://cncks675oojat" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/04.png" id="4_btsja"]
+[ext_resource type="Texture2D" uid="uid://w2egu4twk20i" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/05.png" id="5_ggh16"]
+[ext_resource type="Texture2D" uid="uid://dog7t810dhqdb" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/06.png" id="6_o8n3d"]
+[ext_resource type="Texture2D" uid="uid://dgslxicirtlxw" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/07.png" id="7_3rn2j"]
+[ext_resource type="Texture2D" uid="uid://fn2t16whucg" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/08.png" id="8_g4v3s"]
+[ext_resource type="Texture2D" uid="uid://ccmrfbolagjoe" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/09.png" id="9_y2xh8"]
+[ext_resource type="Texture2D" uid="uid://fighi6d0777p" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/10.png" id="10_vaqwi"]
+[ext_resource type="Texture2D" uid="uid://dl6nhqk3ystif" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/11.png" id="11_eh2kn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_up5jo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qh5vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_11ww5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_unf0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_btsja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ggh16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o8n3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3rn2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g4v3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_y2xh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vaqwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_eh2kn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rr351"]
+size = Vector2(30, 29)
+
+[node name="Area2D" type="Area2D" groups=["win_item"]]
+script = ExtResource("1_h4ta3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_up5jo")
+frame_progress = 0.624656
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_rr351")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -9,8 +9,6 @@ signal game_over_dlg_show_up(dlg)
 @export var tutorialsContainer: Node2D
 @export var player: CharacterBody2D
  
-var dontShowMainMenuEn: bool = false
-
 func _ready():
 	# Conectamos señales de player
 	var player = get_tree().get_first_node_in_group("player")
@@ -35,9 +33,10 @@ func _ready():
 			%coinCounter.update_value(score)
 			
 			)
-	if dontShowMainMenuEn:
-		$MainMenu.queue_free()
-		$MainMenu.game_start.emit()
+	## Desactiva el menu principal
+	#if dontShowMainMenuEn:
+		#$MainMenu.queue_free()
+		#$MainMenu.game_start.emit()
 
 func _on_main_menu_game_start() -> void:
 	%healthBar.visible = true
