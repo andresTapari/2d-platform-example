@@ -106,6 +106,7 @@ grow_vertical = 0
 layout_mode = 2
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 
@@ -127,4 +128,4 @@ position = Vector2(1104, 600)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_5hcna")
 autoplay = "default"
-frame_progress = 0.867842
+frame_progress = 0.54704

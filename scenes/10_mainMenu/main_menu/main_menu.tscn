@@ -1,36 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbmrcjnj4mdhn"]
+[gd_scene load_steps=10 format=3 uid="uid://dbmrcjnj4mdhn"]
 
 [ext_resource type="Script" path="res://scenes/10_mainMenu/main_menu/main_menu.gd" id="1_jqy4f"]
 [ext_resource type="Texture2D" uid="uid://bbfiv0pq75bur" path="res://assets/sprites/TITULO FIN(1).png" id="1_kaq2k"]
+[ext_resource type="FontFile" uid="uid://dsswu3q6cagtk" path="res://assets/fonts/pixelart.ttf" id="2_j2cph"]
 [ext_resource type="Theme" uid="uid://d3jndvb8684gd" path="res://assets/resources/pyrateTheme.tres" id="2_tw601"]
 [ext_resource type="Texture2D" uid="uid://c6t4m6v6hpij2" path="res://assets/sprites/Power UP.png" id="4_2533u"]
 
-[sub_resource type="Animation" id="Animation_dtqqf"]
-resource_name = "fadeOut"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
+[sub_resource type="LabelSettings" id="LabelSettings_2ssuv"]
+font = ExtResource("2_j2cph")
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_ymg6p"]
 length = 0.001
@@ -59,6 +38,33 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_dtqqf"]
+resource_name = "fadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_folmp"]
 _data = {
 "RESET": SubResource("Animation_ymg6p"),
@@ -67,9 +73,13 @@ _data = {
 
 [node name="Control" type="Control" groups=["HUD_MAIN_MENU"]]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_jqy4f")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -127,7 +137,7 @@ size_flags_vertical = 3
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
 modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(550, 0)
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -148,6 +158,24 @@ grow_vertical = 0
 texture = ExtResource("4_2533u")
 expand_mode = 4
 stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -23.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "andresTapa - Academia PowerUp 2024"
+label_settings = SubResource("LabelSettings_2ssuv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

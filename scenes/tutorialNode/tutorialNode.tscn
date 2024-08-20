@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://bba6bc688fokk"]
+
+[ext_resource type="Script" path="res://scenes/tutorialNode/tutorial_node.gd" id="1_m07ru"]
+[ext_resource type="FontFile" uid="uid://dsswu3q6cagtk" path="res://assets/fonts/pixelart.ttf" id="1_s77a6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0iqx8"]
+size = Vector2(32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ayh3u"]
+font = ExtResource("1_s77a6")
+font_size = 8
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_lj4ap"]
+resource_name = "fadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelMessage:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kkccc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LabelMessage:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4vl8n"]
+resource_name = "fadeOut"
+length = 0.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelMessage:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d63r5"]
+_data = {
+"RESET": SubResource("Animation_kkccc"),
+"fadeIn": SubResource("Animation_lj4ap"),
+"fadeOut": SubResource("Animation_4vl8n")
+}
+
+[node name="tutorialNode" type="Area2D"]
+script = ExtResource("1_m07ru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0iqx8")
+
+[node name="LabelMessage" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 64.0
+offset_bottom = -8.0
+text = "message"
+label_settings = SubResource("LabelSettings_ayh3u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d63r5")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

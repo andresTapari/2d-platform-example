@@ -2,6 +2,9 @@ extends CanvasLayer
 
 @onready var GAME_OVER_SCREEN = preload("res://scenes/10_mainMenu/game_over/gameOverScreen.tscn")
 
+@export var tutorialsContainer: Node2D
+@export var player: CharacterBody2D
+ 
 func _ready():
 	# Conectamos señales de player
 	var player = get_tree().get_first_node_in_group("player")
@@ -23,3 +26,7 @@ func _ready():
 
 func _on_main_menu_game_start() -> void:
 	%healthBar.visible = true
+	if tutorialsContainer:
+		tutorialsContainer.visible = true
+	if player:
+		player.ingnoreInputEn = false

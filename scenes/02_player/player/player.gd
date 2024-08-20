@@ -32,6 +32,7 @@ var airAttackNames 		: Array = ["air_attack_1","air_attack_2"]				# Lista de nom
 var groundAtackCounter 	: int = 0												# Contador de ataque terrestre
 var airAtackCounter 	: int = 0												# Contador de ataque aereo
 var currentHealth		: int = maxHealth
+var ingnoreInputEn: bool = true
 
 func _ready() -> void:
 	var hudMainMenu = get_tree().get_first_node_in_group("HUD_MAIN_MENU")
@@ -47,6 +48,8 @@ func _ready() -> void:
 	health_changed.emit(currentHealth,maxHealth)
 
 func _physics_process(delta: float) -> void:
+	if ingnoreInputEn:
+		return
 	if not playerAlive:
 		return
 	# Agregamos gravedad
