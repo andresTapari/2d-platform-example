@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dct4rj7hen30x"]
+[gd_scene load_steps=17 format=4 uid="uid://dct4rj7hen30x"]
 
 [ext_resource type="PackedScene" uid="uid://b7yib7rivo8jc" path="res://scenes/05_props/window/window.tscn" id="1_f7lqh"]
 [ext_resource type="TileSet" uid="uid://bl6omphcmkyh7" path="res://assets/resources/TileSetPirateShip.tres" id="1_gb2fi"]
@@ -15,11 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://85refhdro715" path="res://scenes/08_hud/hud.tscn" id="10_y338n"]
 [ext_resource type="PackedScene" uid="uid://boavdbkkyhesd" path="res://scenes/11_enemey/cannon.tscn" id="13_javoi"]
 [ext_resource type="PackedScene" uid="uid://bba6bc688fokk" path="res://scenes/tutorialNode/tutorialNode.tscn" id="14_y2tpd"]
+[ext_resource type="PackedScene" uid="uid://npum6dwqtljv" path="res://scenes/checkPoint/checkPoint.tscn" id="15_nkv1t"]
 
 [node name="level" type="Node2D" groups=["current_lvl"]]
 script = ExtResource("1_o3aby")
 
 [node name="Hud" parent="." node_paths=PackedStringArray("tutorialsContainer", "player") instance=ExtResource("10_y338n")]
+unique_name_in_owner = true
 tutorialsContainer = NodePath("../Tutorial")
 player = NodePath("../Player")
 
@@ -74,42 +76,42 @@ frame = 1
 
 [node name="AnimatedSprite2D" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(527, 560)
-frame_progress = 0.243395
+frame_progress = 0.853591
 
 [node name="AnimatedSprite2D5" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(511, 577)
 animation = &"big"
-frame_progress = 0.241211
+frame_progress = 0.851407
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D7" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(281, 335)
-frame_progress = 0.243395
+frame_progress = 0.853591
 
 [node name="AnimatedSprite2D8" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(265, 352)
 animation = &"big"
-frame_progress = 0.241211
+frame_progress = 0.851407
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D9" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(239, 430)
-frame_progress = 0.243395
+frame_progress = 0.853591
 
 [node name="AnimatedSprite2D12" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(141, 432)
-frame_progress = 0.243395
+frame_progress = 0.853591
 
 [node name="AnimatedSprite2D10" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(92, 351)
 animation = &"big"
-frame_progress = 0.241211
+frame_progress = 0.851407
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D11" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(-14, 350)
 animation = &"big"
-frame_progress = 0.241211
+frame_progress = 0.851407
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D6" parent="props" instance=ExtResource("5_mrqk0")]
@@ -391,6 +393,20 @@ text = "Salta con 'Espacio'"
 position = Vector2(573, 400)
 text = "Ataca con 'Ctrl'"
 
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Area2D" parent="Node2D" instance=ExtResource("15_nkv1t")]
+position = Vector2(352, 399)
+checkpointId = 1
+
+[node name="Area2D2" parent="Node2D" instance=ExtResource("15_nkv1t")]
+position = Vector2(-32, 432)
+checkpointId = 2
+
+[node name="Area2D3" parent="Node2D" instance=ExtResource("15_nkv1t")]
+position = Vector2(-33, 128)
+checkpointId = 3
+
 [node name="initMarker" type="Marker2D" parent="."]
 position = Vector2(347, 605)
 
@@ -403,3 +419,5 @@ zoom = Vector2(3, 3)
 initTarget = NodePath("../initMarker")
 player = NodePath("../Player")
 resposne = 0.25
+
+[connection signal="game_over_dlg_show_up" from="Hud" to="." method="_on_hud_game_over_dlg_show_up"]

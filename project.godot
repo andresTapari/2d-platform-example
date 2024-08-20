@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 Globals="*res://script/globals.gd"
 SceneLoader="*res://script/sceneLoader.gd"
+LvlData="*res://script/lvlData.gd"
 
 [display]
 

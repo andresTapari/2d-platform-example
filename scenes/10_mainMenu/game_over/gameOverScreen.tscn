@@ -1,14 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfdg0ifjsi6cb"]
+[gd_scene load_steps=10 format=3 uid="uid://bfdg0ifjsi6cb"]
 
 [ext_resource type="FontFile" uid="uid://dsswu3q6cagtk" path="res://assets/fonts/pixelart.ttf" id="1_6o145"]
 [ext_resource type="Script" path="res://scenes/10_mainMenu/game_over/gameOverScreen.gd" id="1_7c0y4"]
 [ext_resource type="Texture2D" uid="uid://sjsjoeja2oxc" path="res://assets/sprites/GAME_OVER.png" id="2_dsh6c"]
+[ext_resource type="Texture2D" uid="uid://c3fb4t4m4r317" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="3_5yaut"]
 [ext_resource type="Theme" uid="uid://d3jndvb8684gd" path="res://assets/resources/pyrateTheme.tres" id="4_onq8g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fv51t"]
 font = ExtResource("1_6o145")
-outline_size = 1
-outline_color = Color(0, 0, 0, 1)
+font_size = 32
+font_color = Color(0.968627, 0.92549, 0.607843, 1)
+outline_size = 8
+outline_color = Color(0.2, 0.196078, 0.239216, 1)
 
 [sub_resource type="Animation" id="Animation_6mbxq"]
 length = 0.001
@@ -108,13 +111,38 @@ grow_vertical = 2
 layout_mode = 2
 texture = ExtResource("2_dsh6c")
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-visible = false
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "SCORE: 20"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("3_5yaut")
+stretch_mode = 4
+
+[node name="LabelScore" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = " 20"
 label_settings = SubResource("LabelSettings_fv51t")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color(1, 1, 1, 0)

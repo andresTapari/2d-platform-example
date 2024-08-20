@@ -141,6 +141,13 @@ func hurt(incomeDamage: int, damageSourceGlobalPosition: Vector2) -> void:
 	velocity = Vector2(backlashForce*dirX , -backlashForce)
 	$AnimatedSprite2D.scale.x = 1 if velocity.x < 0 else -1
 
+func reset_stats() ->void:
+	stateMachine.travel("idle")
+	currentHealth = LvlData.playerCurrentHealth
+	playerAlive = true
+	playerControlEn = true
+	health_changed.emit(currentHealth,maxHealth)
+
 ## Se ejecuta cuando termina la animacion dead_ground
 func game_over_event() -> void:
 	game_over.emit()

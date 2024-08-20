@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://scenes/02_player/camera/interpolatedCamera.gd" id="1_0iobg"]
 
-[node name="InterpolatedCamera" type="Camera2D"]
+[node name="InterpolatedCamera" type="Camera2D" groups=["camera"]]
 script = ExtResource("1_0iobg")
