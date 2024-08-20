@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbmrcjnj4mdhn"]
+
+[ext_resource type="Script" path="res://scenes/10_mainMenu/main_menu/main_menu.gd" id="1_jqy4f"]
+[ext_resource type="Texture2D" uid="uid://bbfiv0pq75bur" path="res://assets/sprites/TITULO FIN(1).png" id="1_kaq2k"]
+[ext_resource type="Theme" uid="uid://d3jndvb8684gd" path="res://assets/resources/pyrateTheme.tres" id="2_tw601"]
+
+[sub_resource type="Animation" id="Animation_dtqqf"]
+resource_name = "fadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ymg6p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_folmp"]
+_data = {
+"RESET": SubResource("Animation_ymg6p"),
+"fadeOut": SubResource("Animation_dtqqf")
+}
+
+[node name="Control" type="Control" groups=["HUD_MAIN_MENU"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_jqy4f")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.286275)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(448, 0)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_kaq2k")
+expand_mode = 5
+
+[node name="ButtonStart" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("2_tw601")
+text = "START"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(550, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_folmp")
+}
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

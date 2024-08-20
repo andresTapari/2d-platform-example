@@ -19,3 +19,7 @@ func _ready():
 		coin.picked.connect(func (score):
 			%coinCounter.update_value(score)
 			)
+
+
+func _on_main_menu_game_start() -> void:
+	%healthBar.visible = true

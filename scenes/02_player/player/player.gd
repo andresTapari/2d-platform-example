@@ -17,7 +17,7 @@ signal game_over
 ## Personaje
 @export var backlashForce = 150
 ## Control del personaje
-@export var playerControlEn: bool = true
+@export var playerControlEn: bool = false
 ## Si el jugador esta vivo
 @export var playerAlive: bool = true
 
@@ -34,6 +34,11 @@ var airAtackCounter 	: int = 0												# Contador de ataque aereo
 var currentHealth		: int = maxHealth
 
 func _ready() -> void:
+	var hudMainMenu = get_tree().get_first_node_in_group("HUD_MAIN_MENU")
+	hudMainMenu.game_start.connect(func ():
+		playerControlEn = true
+		)
+
 	# Cargamos maquina de estado
 	stateMachine = $AnimationTree.get("parameters/playback")
 	# Reproducimos animación por defecto
@@ -126,6 +131,7 @@ func hurt(incomeDamage: int, damageSourceGlobalPosition: Vector2) -> void:
 	if currentHealth > 0:
 		stateMachine.travel("hit")
 	else:
+		playerAlive = false
 		stateMachine.travel("dead_ground")
 	health_changed.emit(currentHealth, maxHealth)
 	var dirX = 1 if global_position.x > damageSourceGlobalPosition.x else -1

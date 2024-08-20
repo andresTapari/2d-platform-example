@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://85refhdro715"]
+[gd_scene load_steps=5 format=3 uid="uid://85refhdro715"]
 
 [ext_resource type="Script" path="res://scenes/08_hud/hud.gd" id="1_8318k"]
 [ext_resource type="PackedScene" uid="uid://ccixyxrrux51j" path="res://scenes/08_hud/healthBar/healthBar.tscn" id="1_tx2ol"]
 [ext_resource type="PackedScene" uid="uid://dva2334o223tb" path="res://scenes/08_hud/coinCounter/coinCounter.tscn" id="3_we3jj"]
+[ext_resource type="PackedScene" uid="uid://dbmrcjnj4mdhn" path="res://scenes/10_mainMenu/main_menu/main_menu.tscn" id="4_hrvk6"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_8318k")
 
 [node name="healthBar" parent="." instance=ExtResource("1_tx2ol")]
 unique_name_in_owner = true
+visible = false
 offset_left = 16.0
 offset_top = -16.0
 offset_right = 112.0
@@ -21,3 +23,7 @@ offset_left = 44.0
 offset_top = 20.0
 offset_right = 92.0
 offset_bottom = 36.0
+
+[node name="MainMenu" parent="." instance=ExtResource("4_hrvk6")]
+
+[connection signal="game_start" from="MainMenu" to="." method="_on_main_menu_game_start"]
