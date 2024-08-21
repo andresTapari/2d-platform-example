@@ -87,42 +87,42 @@ frame = 1
 
 [node name="AnimatedSprite2D" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(527, 560)
-frame_progress = 0.527963
+frame_progress = 0.799113
 
 [node name="AnimatedSprite2D5" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(511, 577)
 animation = &"big"
-frame_progress = 0.525779
+frame_progress = 0.796929
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D7" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(281, 335)
-frame_progress = 0.527963
+frame_progress = 0.799113
 
 [node name="AnimatedSprite2D8" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(265, 352)
 animation = &"big"
-frame_progress = 0.525779
+frame_progress = 0.796929
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D9" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(239, 430)
-frame_progress = 0.527963
+frame_progress = 0.799113
 
 [node name="AnimatedSprite2D12" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(141, 432)
-frame_progress = 0.527963
+frame_progress = 0.799113
 
 [node name="AnimatedSprite2D10" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(92, 351)
 animation = &"big"
-frame_progress = 0.525779
+frame_progress = 0.796929
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D11" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(-16, 382)
 animation = &"big"
-frame_progress = 0.525779
+frame_progress = 0.796929
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D6" parent="props" instance=ExtResource("5_mrqk0")]
@@ -477,7 +477,7 @@ position = Vector2(771, 163)
 position = Vector2(347, 605)
 
 [node name="Player" parent="." instance=ExtResource("1_s4e2a")]
-position = Vector2(-46, 125)
+position = Vector2(425, 640)
 
 [node name="InterpolatedCamera" parent="." node_paths=PackedStringArray("initTarget", "player") instance=ExtResource("3_5jnh4")]
 position = Vector2(347, 605)
