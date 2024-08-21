@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwulhwol5yaki"]
+[gd_scene load_steps=17 format=3 uid="uid://bwulhwol5yaki"]
 
 [ext_resource type="FontFile" uid="uid://dsswu3q6cagtk" path="res://assets/fonts/pixelart.ttf" id="1_4ju3w"]
 [ext_resource type="Texture2D" uid="uid://vtw57b5xmb14" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 01.png" id="1_dyyuv"]
 [ext_resource type="Script" path="res://scenes/10_mainMenu/loadingScreen/loading_screen.gd" id="1_xjf4j"]
+[ext_resource type="Texture2D" uid="uid://byaoo6x7mrklf" path="res://assets/sprites/progressBar/bottom.png" id="2_87ldj"]
 [ext_resource type="Texture2D" uid="uid://crm8jrpglngmv" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 02.png" id="2_pk5bh"]
+[ext_resource type="Texture2D" uid="uid://ips8o3vcuh0s" path="res://assets/sprites/progressBar/progress.png" id="3_hgtx4"]
 [ext_resource type="Texture2D" uid="uid://dm75by8adhxkf" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 03.png" id="3_nlqb5"]
 [ext_resource type="Texture2D" uid="uid://b6q1unqsnvfrn" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 04.png" id="4_y684w"]
 [ext_resource type="Texture2D" uid="uid://chhccyttwrdt3" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 05.png" id="5_bb6ly"]
@@ -78,6 +80,7 @@ color = Color(0.2, 0.196078, 0.239216, 1)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -91,6 +94,26 @@ offset_right = 300.0
 offset_bottom = 13.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(64, 0)
+texture_under = ExtResource("2_87ldj")
+texture_progress = ExtResource("3_hgtx4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -111,6 +134,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+visible = false
 texture_filter = 1
 layout_mode = 2
 text = "Cargando..."
@@ -122,6 +146,7 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(1104, 600)
 scale = Vector2(2, 2)

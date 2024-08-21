@@ -1,30 +1,57 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc4e60uj3u1bg"]
+[gd_scene load_steps=4 format=3 uid="uid://cc4e60uj3u1bg"]
 
-[ext_resource type="FontFile" uid="uid://dsswu3q6cagtk" path="res://assets/fonts/pixelart.ttf" id="1_afaqa"]
+[ext_resource type="Texture2D" uid="uid://badxa0ff3bhq2" path="res://assets/sprites/Fin de la demo.png" id="1_2xl57"]
+[ext_resource type="Script" path="res://scenes/10_mainMenu/win_screen/win_screen.gd" id="1_dowgm"]
+[ext_resource type="Theme" uid="uid://d3jndvb8684gd" path="res://assets/resources/pyrateTheme.tres" id="2_ro4ns"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_5d0n3"]
-font = ExtResource("1_afaqa")
-
-[node name="Control" type="Control"]
+[node name="WinScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_dowgm")
 
-[node name="Label" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.32549)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -11.5
-offset_right = 72.0
-offset_bottom = 11.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "FIN DE LA DEMO"
-label_settings = SubResource("LabelSettings_5d0n3")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("1_2xl57")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme = ExtResource("2_ro4ns")
+text = "MAIN MENU"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

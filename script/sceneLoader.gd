@@ -36,9 +36,7 @@ func _process(_delta):
 	var status = ResourceLoader.load_threaded_get_status(sceneToLoadPath,progress)
 	
 	if status == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-		print(progress[0])
 		loadingSceneScreenInstance.update_progress(progress[0])
-		pass
 	
 	elif status == ResourceLoader.THREAD_LOAD_LOADED:
 		# Atravez de la pantalla de carga informa que debe precionar una tecla

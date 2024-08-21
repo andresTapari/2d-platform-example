@@ -4,7 +4,8 @@ extends CanvasLayer
 signal game_over_dlg_show_up(dlg)
 
 ## Escenas precargadast
-@onready var GAME_OVER_SCREEN = preload("res://scenes/10_mainMenu/game_over/gameOverScreen.tscn")
+@onready var GAME_OVER_SCREEN = preload(Globals.GAME_OVER_SCREEN_PATH)
+@onready var WIN_SCREEN = preload(Globals.END_LEVEL_1_PATH)
 
 @export var tutorialsContainer: Node2D
 @export var player: CharacterBody2D
@@ -33,10 +34,10 @@ func _ready():
 			%coinCounter.update_value(score)
 			
 			)
-	## Desactiva el menu principal
-	#if dontShowMainMenuEn:
-		#$MainMenu.queue_free()
-		#$MainMenu.game_start.emit()
+	
+	var winItem: Array = get_tree().get_nodes_in_group("win_item")
+	if winItem.size() > 0:
+		winItem[0].end_lvl_event.connect(handle_win_event)
 
 func _on_main_menu_game_start() -> void:
 	%healthBar.visible = true
@@ -44,3 +45,14 @@ func _on_main_menu_game_start() -> void:
 		tutorialsContainer.visible = true
 	if player:
 		player.ingnoreInputEn = false
+
+func handle_win_event() -> void:
+	# Borramos todos los elementos de la pantalla
+	for controls in get_children():
+		controls.queue_free()
+
+	# Mostramos pantalla de victoria y cerramos el juego
+	var winDlg = WIN_SCREEN.instantiate()
+	add_child(winDlg)
+	get_tree().paused = true 
+	

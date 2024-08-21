@@ -10,15 +10,16 @@ config_version=5
 
 [application]
 
-config/name="2d-platform-example"
+config/name="Pirate-Adventure"
+config/description="Juego de ejemplo para academia POWER-UP"
 config/tags=PackedStringArray("power_up")
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/bg_color=Color(0.2, 0.196078, 0.239216, 1)
 boot_splash/image="res://assets/sprites/Power UP_splash.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://assets/sprites/Power UP_splash.png"
 
 [autoload]
 
