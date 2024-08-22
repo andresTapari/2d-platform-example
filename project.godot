@@ -30,7 +30,6 @@ LvlData="*res://script/lvlData.gd"
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [global_group]
 

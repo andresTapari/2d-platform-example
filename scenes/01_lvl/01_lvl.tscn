@@ -23,6 +23,7 @@ script = ExtResource("1_o3aby")
 
 [node name="Hud" parent="." node_paths=PackedStringArray("tutorialsContainer", "player") instance=ExtResource("10_y338n")]
 unique_name_in_owner = true
+visible = false
 tutorialsContainer = NodePath("../Tutorial")
 player = NodePath("../Player")
 
@@ -87,42 +88,42 @@ frame = 1
 
 [node name="AnimatedSprite2D" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(527, 560)
-frame_progress = 0.631892
+frame_progress = 0.953426
 
 [node name="AnimatedSprite2D5" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(511, 577)
 animation = &"big"
-frame_progress = 0.629707
+frame_progress = 0.951241
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D7" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(281, 335)
-frame_progress = 0.631892
+frame_progress = 0.953426
 
 [node name="AnimatedSprite2D8" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(265, 352)
 animation = &"big"
-frame_progress = 0.629707
+frame_progress = 0.951241
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D9" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(239, 430)
-frame_progress = 0.631892
+frame_progress = 0.953426
 
 [node name="AnimatedSprite2D12" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(141, 432)
-frame_progress = 0.631892
+frame_progress = 0.953426
 
 [node name="AnimatedSprite2D10" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(92, 351)
 animation = &"big"
-frame_progress = 0.629707
+frame_progress = 0.951241
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D11" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(-16, 382)
 animation = &"big"
-frame_progress = 0.629707
+frame_progress = 0.951241
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D6" parent="props" instance=ExtResource("5_mrqk0")]

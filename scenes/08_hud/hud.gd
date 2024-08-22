@@ -11,6 +11,8 @@ signal game_over_dlg_show_up(dlg)
 @export var player: CharacterBody2D
  
 func _ready():
+	visible = true
+	
 	# Conectamos señales de player
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
