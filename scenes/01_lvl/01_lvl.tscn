@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dct4rj7hen30x"]
+[gd_scene load_steps=19 format=4 uid="uid://dct4rj7hen30x"]
 
 [ext_resource type="PackedScene" uid="uid://b7yib7rivo8jc" path="res://scenes/05_props/window/window.tscn" id="1_f7lqh"]
 [ext_resource type="TileSet" uid="uid://bl6omphcmkyh7" path="res://assets/resources/TileSetPirateShip.tres" id="1_gb2fi"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bba6bc688fokk" path="res://scenes/tutorialNode/tutorialNode.tscn" id="14_y2tpd"]
 [ext_resource type="PackedScene" uid="uid://npum6dwqtljv" path="res://scenes/checkPoint/checkPoint.tscn" id="15_nkv1t"]
 [ext_resource type="PackedScene" uid="uid://bscxgoesn0mpj" path="res://scenes/map/map.tscn" id="15_no4tj"]
+[ext_resource type="PackedScene" uid="uid://bpy482ikwhdjy" path="res://scenes/potion/potion.tscn" id="17_heow8"]
 
 [node name="level" type="Node2D" groups=["current_lvl"]]
 script = ExtResource("1_o3aby")
@@ -85,42 +86,42 @@ frame = 1
 
 [node name="AnimatedSprite2D" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(527, 560)
-frame_progress = 0.691364
+frame_progress = 0.439374
 
 [node name="AnimatedSprite2D5" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(511, 577)
 animation = &"big"
-frame_progress = 0.689179
+frame_progress = 0.437189
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D7" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(281, 335)
-frame_progress = 0.691364
+frame_progress = 0.439374
 
 [node name="AnimatedSprite2D8" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(265, 352)
 animation = &"big"
-frame_progress = 0.689179
+frame_progress = 0.437189
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D9" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(239, 430)
-frame_progress = 0.691364
+frame_progress = 0.439374
 
 [node name="AnimatedSprite2D12" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(141, 432)
-frame_progress = 0.691364
+frame_progress = 0.439374
 
 [node name="AnimatedSprite2D10" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(92, 351)
 animation = &"big"
-frame_progress = 0.689179
+frame_progress = 0.437189
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D11" parent="props" instance=ExtResource("4_qv1ds")]
 position = Vector2(-16, 382)
 animation = &"big"
-frame_progress = 0.689179
+frame_progress = 0.437189
 currentAnimation = "big"
 
 [node name="AnimatedSprite2D6" parent="props" instance=ExtResource("5_mrqk0")]
@@ -410,28 +411,34 @@ rotation = 6.28318
 position = Vector2(-175, 372)
 flip_h = true
 wait_time = 1.0
+visibleOnScreenEnabelrEn = true
 
 [node name="cannon2" parent="Enemy" instance=ExtResource("13_javoi")]
 position = Vector2(-177, 244)
 flip_h = true
 wait_time = 2.0
+visibleOnScreenEnabelrEn = true
 
 [node name="cannon3" parent="Enemy" instance=ExtResource("13_javoi")]
 position = Vector2(-176, 179)
 flip_h = true
 wait_time = 3.0
+visibleOnScreenEnabelrEn = true
 
 [node name="cannon5" parent="Enemy" instance=ExtResource("13_javoi")]
 position = Vector2(464, 148)
 wait_time = 3.0
+visibleOnScreenEnabelrEn = false
 
 [node name="cannon6" parent="Enemy" instance=ExtResource("13_javoi")]
 position = Vector2(762, 243)
 wait_time = 3.0
+visibleOnScreenEnabelrEn = false
 
 [node name="cannon4" parent="Enemy" instance=ExtResource("13_javoi")]
 position = Vector2(-49, 307)
 wait_time = 3.0
+visibleOnScreenEnabelrEn = true
 
 [node name="Tutorial" type="Node2D" parent="."]
 visible = false
@@ -474,8 +481,11 @@ position = Vector2(771, 163)
 [node name="initMarker" type="Marker2D" parent="."]
 position = Vector2(347, 605)
 
+[node name="potion" parent="." instance=ExtResource("17_heow8")]
+position = Vector2(500, 626)
+
 [node name="Player" parent="." instance=ExtResource("1_s4e2a")]
-position = Vector2(576, 412)
+position = Vector2(406, 631)
 
 [node name="InterpolatedCamera" parent="." node_paths=PackedStringArray("initTarget", "player") instance=ExtResource("3_5jnh4")]
 position = Vector2(347, 605)

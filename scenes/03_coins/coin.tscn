@@ -63,4 +63,8 @@ frame_progress = 0.0205815
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_4pryl")
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(1, 0.5)
+scale = Vector2(0.6, 0.55)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

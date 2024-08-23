@@ -1,0 +1,78 @@
+[gd_scene load_steps=15 format=3 uid="uid://bpy482ikwhdjy"]
+
+[ext_resource type="Texture2D" uid="uid://c3guxehcb0bab" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/01.png" id="1_aauoo"]
+[ext_resource type="Script" path="res://scenes/potion/potion.gd" id="1_j700l"]
+[ext_resource type="Texture2D" uid="uid://brxsaxk86kygg" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/02.png" id="2_bjthd"]
+[ext_resource type="Texture2D" uid="uid://bu8darqm7vxur" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/03.png" id="3_7q1k2"]
+[ext_resource type="Texture2D" uid="uid://rge2muyfysxj" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/04.png" id="4_1b6aa"]
+[ext_resource type="Texture2D" uid="uid://b0hwnu1bjj4pk" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/05.png" id="5_w7ov2"]
+[ext_resource type="Texture2D" uid="uid://dpaiwf7mlgmp4" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/06.png" id="6_n77ba"]
+[ext_resource type="Texture2D" uid="uid://bi2bvx643trw" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Red Potion/07.png" id="7_jw4es"]
+[ext_resource type="Texture2D" uid="uid://c7323l8vu1r1o" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Potion Effect/01.png" id="8_jlj4e"]
+[ext_resource type="Texture2D" uid="uid://dhntc2u63ya84" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Potion Effect/02.png" id="9_5q6a3"]
+[ext_resource type="Texture2D" uid="uid://bw1hdjwgfmung" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Potion Effect/03.png" id="10_07jrm"]
+[ext_resource type="Texture2D" uid="uid://bd3jswjqq2ctl" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Potion Effect/04.png" id="11_37hwn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8txa1"]
+size = Vector2(10, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2xf0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aauoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bjthd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7q1k2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1b6aa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w7ov2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n77ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jw4es")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jlj4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5q6a3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_07jrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_37hwn")
+}],
+"loop": false,
+"name": &"picked",
+"speed": 10.0
+}]
+
+[node name="potion" type="Area2D"]
+script = ExtResource("1_j700l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_8txa1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2xf0f")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

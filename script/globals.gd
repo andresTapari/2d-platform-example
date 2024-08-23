@@ -17,7 +17,8 @@ const THROW_SWORD_TSCN: String = "res://scenes/07_projectile/throwSword/throwSwo
 ## Partes del barril:
 const BARREL_PARTS_TSCN: String = "res://scenes/06_breackableProps/barrel/barrelPart.tscn"
 
-
+## Posion de curación:
+const POTION_TSCN: String = "res://scenes/potion/potion.tscn"
 
 
 ## Bus audio master:

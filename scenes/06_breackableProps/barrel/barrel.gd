@@ -1,12 +1,13 @@
 extends RigidBody2D
 
 ## Vida de la caja
-@export var health: 	int = 3
+@export var health: 	int = 2
 ## Fuerza de salto cuando es golpeado
 @export var jumpForce: 	int = 100
 
 ## Partes del barril
 @onready var BARREL_PARTS = preload(Globals.BARREL_PARTS_TSCN)
+@onready var POTION = preload(Globals.POTION_TSCN)
 
 var currentHealth = health	# Vida del barril
 
@@ -29,15 +30,23 @@ func hit(incomeDamage: int, incomeDamagePosition: Vector2 = Vector2.ZERO) -> voi
 		$soundFx/explosion.finished.connect(func (): call_deferred("queue_free"))
 		%AnimatedSprite2D.visible = false
 		for n in range(4):
-			var newPart:BarrelPart = BARREL_PARTS.instantiate()
-			get_parent().add_child(newPart)
-			newPart.global_position = self.global_position
-			newPart.spriteFrame = n
-			var newImpulse = Vector2(jumpForce,-jumpForce) if n%2 else Vector2(-jumpForce,-jumpForce)
-			if n>1:
-				newImpulse.y = 0
-			newPart.apply_impulse(newImpulse * 1.5)
-	
+			spawn_parts(n)
+		spawn_drop()
 	# Esperamos que la animacion termine
 	await %AnimatedSprite2D.animation_finished
 	%AnimatedSprite2D.play("idle")
+
+func spawn_parts(counter: int):
+	var newPart:BarrelPart = BARREL_PARTS.instantiate()
+	get_parent().add_child(newPart)
+	newPart.global_position = self.global_position
+	newPart.spriteFrame = counter
+	var newImpulse = Vector2(jumpForce,-jumpForce) if counter%2 else Vector2(-jumpForce,-jumpForce)
+	if counter>1:
+		newImpulse.y = 0
+	newPart.apply_impulse(newImpulse * 1.5)
+
+func spawn_drop():
+	var drop = POTION.instantiate()
+	get_parent().add_child(drop)
+	drop.global_position = self.global_position

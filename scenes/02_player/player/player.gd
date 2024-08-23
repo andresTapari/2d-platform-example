@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 #Señales:
 ## Se emite cuando la vida del personaje cambia.
@@ -31,7 +31,7 @@ var groundAttackNames 	: Array = ["attack_1","attack_2","attack_3"]			# Lista de
 var airAttackNames 		: Array = ["air_attack_1","air_attack_2"]				# Lista de nombres con las animaciones de ataque aereo
 var groundAtackCounter 	: int = 0												# Contador de ataque terrestre
 var airAtackCounter 	: int = 0												# Contador de ataque aereo
-var currentHealth		: int = maxHealth
+var currentHealth		: int = maxHealth /2
 var ingnoreInputEn: bool = true
 
 func _ready() -> void:
@@ -141,6 +141,15 @@ func hurt(incomeDamage: int, damageSourceGlobalPosition: Vector2) -> void:
 	velocity = Vector2(backlashForce*dirX , -backlashForce)
 	$AnimatedSprite2D.scale.x = 1 if velocity.x < 0 else -1
 
+## Esta funcion se ejecuta cuando el jugador percibe curación
+func heal(incomeHealth: int) -> void:
+	currentHealth += incomeHealth
+	if currentHealth > maxHealth:
+		currentHealth = maxHealth
+	health_changed.emit(currentHealth, maxHealth)
+	
+
+## Reestablecer valores 
 func reset_stats() ->void:
 	stateMachine.travel("idle")
 	currentHealth = LvlData.playerCurrentHealth
