@@ -41,26 +41,32 @@ func slider_value_to_db(slider_value: float) -> float:
 	var max_db = 0.0    # El valor máximo en dB
 	return lerp(min_db, max_db, slider_value / 100.0)
 
-
 ## Desache los cambios
 func undo_changes() -> void:
-	pass
+	AudioServer.set_bus_mute(Globals.MASTER_BUS_INDEX,not initial_master_mute)
+	AudioServer.set_bus_mute(Globals.MUSIC_BUS_INDEX,not initial_music_mute)
+	AudioServer.set_bus_mute(Globals.SOUNDFX_BUS_INDEX,not initial_soundfx_mute)
+
+	AudioServer.set_bus_volume_db(Globals.MASTER_BUS_INDEX, slider_value_to_db(initial_master_volume_db))
+	AudioServer.set_bus_volume_db(Globals.MUSIC_BUS_INDEX, slider_value_to_db(initial_music_volume_db))
+	AudioServer.set_bus_volume_db(Globals.SOUNDFX_BUS_INDEX, slider_value_to_db(initial_soundfx_volume_db))
+
+# Señales:
 
 func _on_check_button_master_en_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(Globals.MASTER_BUS_INDEX,not toggled_on)
 
-func _on_h_slider_master_value_changed(value: float) -> void:
-	pass # Replace with function body.
-
 func _on_check_button_music_en_toggled(toggled_on: bool) -> void:
 	AudioServer.set_bus_mute(Globals.MUSIC_BUS_INDEX,not toggled_on)
 
-func _on_h_slider_music_changed() -> void:
-	pass # Replace with function body.
-
 func _on_check_button_fx_en_toggled(toggled_on: bool) -> void:
-	AudioServer.set_bus_mute(Globals.MUSIC_BUS_INDEX,not toggled_on)
+	AudioServer.set_bus_mute(Globals.SOUNDFX_BUS_INDEX,not toggled_on)
 
+func _on_h_slider_master_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(Globals.MASTER_BUS_INDEX, slider_value_to_db(value))
 
-func _on_h_slider_sound_fx_changed() -> void:
-	pass # Replace with function body.
+func _on_h_slider_sound_fx_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(Globals.SOUNDFX_BUS_INDEX, slider_value_to_db(value))
+
+func _on_h_slider_music_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(Globals.MUSIC_BUS_INDEX, slider_value_to_db(value))

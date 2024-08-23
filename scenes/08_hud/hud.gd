@@ -3,7 +3,8 @@ extends CanvasLayer
 ## Señal que se emite cuando se crea ventana de 'game_over'
 signal game_over_dlg_show_up(dlg)
 
-## Escenas precargadast
+## Escenas precargadas
+@onready var SETUP_DLG = preload(Globals.SETUP_WINDOW_PATH)
 @onready var GAME_OVER_SCREEN = preload(Globals.GAME_OVER_SCREEN_PATH)
 @onready var WIN_SCREEN = preload(Globals.END_LEVEL_1_PATH)
 
@@ -57,4 +58,8 @@ func handle_win_event() -> void:
 	var winDlg = WIN_SCREEN.instantiate()
 	add_child(winDlg)
 	get_tree().paused = true 
-	
+
+
+func _on_menu_button_pressed() -> void:
+	var newDlg = SETUP_DLG.instantiate()
+	add_child(newDlg)

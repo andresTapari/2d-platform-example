@@ -10,6 +10,8 @@ const GAME_OVER_SCREEN_PATH: String = "res://scenes/10_mainMenu/game_over/gameOv
 ## Pantalla de 'Fin del nivel':
 const END_LEVEL_1_PATH: String = "res://scenes/10_mainMenu/win_screen/win_screen.tscn"
 
+## Ventana de configuración:
+const SETUP_WINDOW_PATH: String = "res://scenes/08_hud/setupDlg/setupDlg.tscn"
 
 ## Bus audio master:
 const MASTER_BUS_INDEX: int = 0
