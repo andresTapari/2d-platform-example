@@ -38,6 +38,7 @@ func _ready():
 			
 			)
 	
+	# Conectamos señales de evento win
 	var winItem: Array = get_tree().get_nodes_in_group("win_item")
 	if winItem.size() > 0:
 		winItem[0].end_lvl_event.connect(handle_win_event)

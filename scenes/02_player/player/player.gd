@@ -22,7 +22,7 @@ signal game_over
 @export var playerAlive: bool = true
 
 ## Escenas precargadas
-var SWORD = preload(Globals.THROW_SWORD_PATH)
+var SWORD = preload(Globals.THROW_SWORD_TSCN)
 
 ## Variables
 var stateMachine: AnimationNodeStateMachinePlayback								# Maquina de estados
