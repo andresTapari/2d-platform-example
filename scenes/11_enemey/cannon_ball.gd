@@ -15,6 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") or body.is_in_group("lvl"):
 		speed = 0
 		$AnimatedSprite2D.play("explosion")
+		$AudioStreamPlayer2D.play()
 		if body.is_in_group("player"):
 			body.hurt(damage,self.global_position)
 

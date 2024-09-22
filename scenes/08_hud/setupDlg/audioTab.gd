@@ -9,6 +9,10 @@ var initial_master_mute: bool
 var initial_music_mute: bool
 var initial_soundfx_mute: bool
 
+
+const MIN_DB: float = -30.0
+const MAX_DB: float = 	0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Cargamos valos actuales
@@ -31,14 +35,14 @@ func _ready() -> void:
 
 ## Convierte dB a un valor entre 0 y 100 para el slider
 func db_to_slider_value(db: float) -> float:
-	var min_db = -72.0  # El valor mínimo en dB (puede ser ajustado según tus necesidades)
-	var max_db = 0.0    # El valor máximo en dB
+	var min_db = MIN_DB    # El valor mínimo en dB (puede ser ajustado según tus necesidades)
+	var max_db = MAX_DB    # El valor máximo en dB
 	return clamp(100 * (db - min_db) / (max_db - min_db), 0, 100)
 
 ## Convierte un valor del slider (0 a 100) a dB
 func slider_value_to_db(slider_value: float) -> float:
-	var min_db = -72.0  # El valor mínimo en dB (puede ser ajustado según tus necesidades)
-	var max_db = 0.0    # El valor máximo en dB
+	var min_db = MIN_DB    # El valor mínimo en dB (puede ser ajustado según tus necesidades)
+	var max_db = MAX_DB    # El valor máximo en dB
 	return lerp(min_db, max_db, slider_value / 100.0)
 
 ## Desache los cambios

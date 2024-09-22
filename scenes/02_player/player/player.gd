@@ -50,10 +50,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if ingnoreInputEn:
 		return
+	
 	if not playerAlive:
 		return
+	
 	# Agregamos gravedad
 	apply_gravity(delta)
+	
 	if playerControlEn:
 		# Administramos salto
 		handle_jump()
@@ -61,6 +64,7 @@ func _physics_process(delta: float) -> void:
 		handle_movement()
 		# Administramos ataque
 		handle_attack()
+
 	# Movemos el personaje
 	move_and_slide()
 
@@ -73,6 +77,7 @@ func apply_gravity(delta) -> void:
 func handle_jump() -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jumpVelocity
+
 	# actualizamos animaciones
 	if velocity.y > 0:
 		stateMachine.travel("fall")
@@ -147,7 +152,6 @@ func heal(incomeHealth: int) -> void:
 	if currentHealth > maxHealth:
 		currentHealth = maxHealth
 	health_changed.emit(currentHealth, maxHealth)
-	
 
 ## Reestablecer valores 
 func reset_stats() ->void:
