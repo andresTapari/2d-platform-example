@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc4e60uj3u1bg"]
+[gd_scene load_steps=6 format=3 uid="uid://cc4e60uj3u1bg"]
 
 [ext_resource type="Texture2D" uid="uid://badxa0ff3bhq2" path="res://assets/sprites/Fin de la demo.png" id="1_2xl57"]
 [ext_resource type="Script" path="res://scenes/10_mainMenu/win_screen/win_screen.gd" id="1_dowgm"]
-[ext_resource type="Theme" uid="uid://d3jndvb8684gd" path="res://assets/resources/pyrateTheme.tres" id="2_ro4ns"]
+[ext_resource type="Texture2D" uid="uid://b4yeis8aidr17" path="res://assets/sprites/Botones/Menu/X3/Boton Menu 1.png" id="3_xrrok"]
+[ext_resource type="Texture2D" uid="uid://cfhsw2c4uky5v" path="res://assets/sprites/Botones/Menu/X3/Boton Menu 3.png" id="4_kdtm3"]
+[ext_resource type="Texture2D" uid="uid://dcvaat80mihne" path="res://assets/sprites/Botones/Menu/X3/Boton Menu 2.png" id="5_hdsiq"]
 
 [node name="WinScreen" type="Control"]
 process_mode = 3
@@ -47,11 +49,11 @@ texture = ExtResource("1_2xl57")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(0, 64)
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_ro4ns")
-text = "MAIN MENU"
+texture_normal = ExtResource("3_xrrok")
+texture_pressed = ExtResource("4_kdtm3")
+texture_hover = ExtResource("5_hdsiq")
+stretch_mode = 5
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
