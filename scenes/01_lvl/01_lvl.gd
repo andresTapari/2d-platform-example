@@ -6,7 +6,7 @@ func _handle_player_entered_check_point(id: int) -> void:
 		LvlData.currentCheckPointIndex = id
 		LvlData.playerCurrentHealth
 
-## Esto cambiar
+
 func _on_hud_game_over_dlg_show_up(dlg: Variant) -> void:
 	dlg.restart_lvl.connect(func ():
 		if LvlData.currentCheckPointIndex > 0:

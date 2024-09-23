@@ -11,7 +11,7 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		# Emitimos señal que se recolecto una moneda
 		picked.emit(score)
-		# Reproducimos animación
+		# Reproducimos animación y sonido
 		$AnimatedSprite2D.play("picked")
 		$AudioStreamPlayer.play()
 		# Conectamos señal que termina animación para eliminar la moneda
