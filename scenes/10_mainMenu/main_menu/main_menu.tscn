@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbmrcjnj4mdhn"]
+[gd_scene load_steps=14 format=3 uid="uid://dbmrcjnj4mdhn"]
 
 [ext_resource type="Script" path="res://scenes/10_mainMenu/main_menu/main_menu.gd" id="1_jqy4f"]
 [ext_resource type="Texture2D" uid="uid://bbfiv0pq75bur" path="res://assets/sprites/TITULO FIN(1).png" id="1_kaq2k"]
 [ext_resource type="FontFile" uid="uid://dsswu3q6cagtk" path="res://assets/fonts/pixelart.ttf" id="2_j2cph"]
-[ext_resource type="Theme" uid="uid://d3jndvb8684gd" path="res://assets/resources/pyrateTheme.tres" id="2_tw601"]
 [ext_resource type="Shader" path="res://scenes/10_mainMenu/main_menu/shader/flagEffect.gdshader" id="2_vfevm"]
 [ext_resource type="Texture2D" uid="uid://c6t4m6v6hpij2" path="res://assets/sprites/Power UP.png" id="4_2533u"]
+[ext_resource type="Texture2D" uid="uid://bgehekavgdatc" path="res://assets/sprites/Botones/Comenzar/X5/Boton Comenzar 1.png" id="5_6kexs"]
+[ext_resource type="Texture2D" uid="uid://tot3nf1hc10m" path="res://assets/sprites/Botones/Comenzar/X5/Boton Comenzar 3.png" id="6_kmxwp"]
+[ext_resource type="Texture2D" uid="uid://dnqtc8oooa4ef" path="res://assets/sprites/Botones/Comenzar/X5/Boton Comenzar 2.png" id="7_xdkgd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jm0ns"]
 shader = ExtResource("2_vfevm")
@@ -130,16 +132,19 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ButtonStart" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(200, 60)
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-theme = ExtResource("2_tw601")
-text = "START"
+texture_normal = ExtResource("5_6kexs")
+texture_pressed = ExtResource("6_kmxwp")
+texture_hover = ExtResource("7_xdkgd")
+stretch_mode = 5
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
@@ -177,9 +182,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -576.0
-offset_top = -39.0
+offset_top = -40.0
 offset_right = 576.0
-offset_bottom = -16.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "andresTapa - Academia PowerUp 2024"
@@ -193,5 +198,5 @@ libraries = {
 "": SubResource("AnimationLibrary_folmp")
 }
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
